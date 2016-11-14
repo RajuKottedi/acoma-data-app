@@ -1,0 +1,13 @@
+{
+  "name": "Zuni",
+  "version": "1.0.0",
+  "author": "kauffmanes",
+  "description": "A data collection app",
+  "respository": "https://github.com/kauffmanes/zuni-data-app",
+  "main": "app.config.js",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "~1.5.8",
+    "angular-ui-router": "~0.3.2"
+  }
+}
