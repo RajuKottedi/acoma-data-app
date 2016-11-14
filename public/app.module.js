@@ -1,4 +1,4 @@
-angular.module('app', ['app.core', 'app.layout']).config(config);
+angular.module('app', ['app.core', 'app.layout', 'app.components']).config(config);
 
 function config ($urlRouterProvider, $stateProvider) {
 	
@@ -14,6 +14,20 @@ function config ($urlRouterProvider, $stateProvider) {
 			},
 			'main@dashboard': {
 				templateUrl: 'dashboard/dashboard.html'
+			}
+		}
+	});
+
+	//Home
+	$stateProvider.state('newFind', {
+		url: '/new-find',
+		views: {
+			'body@': {
+				templateUrl: 'layout/dashboard.tmpl.html',
+				controller: 'newFind.controller'
+			},
+			'main@newFind': {
+				templateUrl: 'newFind/new-find.html'
 			}
 		}
 	});
