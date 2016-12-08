@@ -4,12 +4,12 @@ function config ($urlRouterProvider, $stateProvider) {
 	
 	$urlRouterProvider.otherwise('/dashboard');
 
-	//Home
+	//Dashboard
 	$stateProvider.state('dashboard', {
 		url: '/dashboard',
 		views: {
 			'body@': {
-				templateUrl: 'layout/dashboard.tmpl.html',
+				templateUrl: 'layout/default.tmpl.html',
 				controller: 'dashboard.controller'
 			},
 			'main@dashboard': {
@@ -18,12 +18,12 @@ function config ($urlRouterProvider, $stateProvider) {
 		}
 	});
 
-	//Home
+	//New Find
 	$stateProvider.state('newFind', {
 		url: '/new-find',
 		views: {
 			'body@': {
-				templateUrl: 'layout/dashboard.tmpl.html',
+				templateUrl: 'layout/child-default.tmpl.html',
 				controller: 'newFind.controller'
 			},
 			'main@newFind': {

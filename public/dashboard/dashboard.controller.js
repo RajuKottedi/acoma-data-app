@@ -2,7 +2,7 @@ angular.module('app')
 
 	.controller('dashboard.controller', ['$scope', '$state', function ($scope, $state) {
 
-		$scope.heading = 'Zuni Data Collection App';
+		$scope.heading = 'Cibola Ceramic Analysis App';
 
 		$scope.previousFinds = [{
 			id: 'FIND1A2D',
