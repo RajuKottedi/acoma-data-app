@@ -272,7 +272,8 @@ section.dashboard {
   margin-top: 12px;
 }
 .new-find .set {
-  border-left: solid 3px blue;
+  border-left: solid 3px #17475C;
+  padding-left: 12px;
 }
 .new-find .set input,
 .new-find .set select,
