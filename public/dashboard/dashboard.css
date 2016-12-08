@@ -18,6 +18,9 @@ section.dashboard {
   margin-bottom: 10px;
   position: relative;
 }
+.dashboard > div p {
+  word-break: break-all;
+}
 .dashboard .add-find i {
   display: block;
   width: 100%;

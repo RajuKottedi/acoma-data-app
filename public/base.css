@@ -242,6 +242,9 @@ section.dashboard {
   margin-bottom: 10px;
   position: relative;
 }
+.dashboard > div p {
+  word-break: break-all;
+}
 .dashboard .add-find i {
   display: block;
   width: 100%;
@@ -268,30 +271,33 @@ section.dashboard {
 .new-find h2 {
   margin-top: 12px;
 }
-.new-find input,
-.new-find select,
-.new-find textarea {
+.new-find .set {
+  border-left: solid 3px blue;
+}
+.new-find .set input,
+.new-find .set select,
+.new-find .set textarea {
   width: 100%;
   outline-color: #114BC8;
 }
-.new-find input[type="number"] {
+.new-find .set input[type="number"] {
   width: 25%;
 }
-.new-find textarea {
+.new-find .set textarea {
   height: 200px;
 }
-.new-find label {
+.new-find .set label {
   display: inline-block;
   padding-top: 6px;
 }
-.new-find p {
+.new-find .set p {
   margin-top: 6px;
   color: #666;
   font-size: 85%;
   font-weight: 300;
   line-height: 125%;
 }
-.new-find .unit {
+.new-find .set .unit {
   font-style: italic;
 }
 .find-lbl {
