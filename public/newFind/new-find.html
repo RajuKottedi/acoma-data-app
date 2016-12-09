@@ -3,13 +3,22 @@
 	<h1>Enter a new find</h1>
 
 	<form data-ng-submit="submit()" novalidate name="form.newFindForm">
-		
-		<div class="set" data-ng-repeat="set in data" data-ng-class="{'open': set.expandedDisplay}" data-ng-click="set.expandedDisplay =! set.expandedDisplay">
-			<h2>
+
+		<div class="set" data-ng-repeat="set in data" data-ng-class="{'open': set.expandedDisplay}">
+			<h2 data-ng-click="set.expandedDisplay =! set.expandedDisplay">
 				<i data-ng-if="!set.expandedDisplay" class="fa fa-plus" aria-hidden="true"></i>
 				<i data-ng-if="set.expandedDisplay" class="fa fa-minus" aria-hidden="true"></i>
 				{{ set.sectionTitle }}</h2>
 			<div data-ng-if="set.expandedDisplay" data-ng-repeat="question in set.questions" data-new-find-question="question"></div>
+		</div>
+
+		<div class="form-actions">
+			<button type="button">Cancel</button>
+			<button class="primary pull-right" type="submit">
+				<span data-ng-if="!transmitting">Save to device</span>
+				<span data-ng-if="transmitting">Saving...</span>
+			</button>
+			<p class="margin-top-2x" data-ng-if="saveAlert.display">{{ saveAlert.message }}</span>
 		</div>
 
 	</form>

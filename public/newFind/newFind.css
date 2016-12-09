@@ -32,7 +32,7 @@
 .new-find .set {
   padding: 12px;
 }
-.new-find .set:nth-child(even) {
+.new-find .set:nth-child(odd) {
   background: rgba(0, 0, 0, 0.03);
 }
 .new-find .set > div {
@@ -63,4 +63,7 @@
 }
 .new-find .set .unit {
   font-style: italic;
+}
+.new-find .form-actions {
+  margin-top: 24px;
 }

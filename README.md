@@ -7,3 +7,8 @@ A data collection application
 4. run http-server in /public
 
 5. to run less: watch-less -c -e .css -i ./resources/ in public directory
+
+Info
+1. First accordion is expanded because it's required for each find
+2. when submitting, the form generates an ID
+3. lat lng

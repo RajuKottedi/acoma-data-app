@@ -38,7 +38,7 @@
 
 		padding: @defaultMargin;
 		
-		&:nth-child(even) {
+		&:nth-child(odd) {
 			background: rgba(0,0,0,.03);
 		}
 
@@ -75,5 +75,9 @@
 		.unit {
 			font-style: italic;
 		}
+	}
+
+	.form-actions {
+		margin-top: @defaultMargin * 2;
 	}
 }

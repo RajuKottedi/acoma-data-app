@@ -17,7 +17,7 @@ body {
 
 h1 {
 	font-size: 24px;
-	margin-bottom: 36px;
+	margin-bottom: @defaultMargin;
 	padding-bottom: 12px;
 	border-bottom: solid 2px rgba(0,0,0,.1);
 }
@@ -41,14 +41,33 @@ input[type="text"], input[type="number"], select, textarea {
 	resize: none;
 }
 
+button {
+	appearance: none;
+	-webkit-appearance: none;
+	background: rgba(0,0,0,.1);
+	padding: 12px 18px;
+	border: none;
+	outline: none;
+	border-radius: 3px;
+	font-size: 1em;
+}
+
+button.primary {
+	background-color: @submarine;
+	color: #fff;
+}
+
 /* Utility Classes */
 .hundy { width: 100%; }
+.pull-right { float: right; }
+.pull-left { float: left; }
 
 .default-margin { margin: @defaultMargin; }
 .margin-left { margin-left: @defaultMargin; }
 .margin-right { margin-right: @defaultMargin; }
 .margin-top { margin-top: @defaultMargin; }
 .margin-bottom { margin-bottom: @defaultMargin; }
+.margin-top-2x { margin-top: @defaultMargin * 2; }
 
 header {
 	width: 100%;
