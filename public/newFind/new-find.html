@@ -4,9 +4,12 @@
 
 	<form data-ng-submit="submit()" novalidate name="form.newFindForm">
 		
-		<div class="set" data-ng-repeat="set in data">
-			<h2>{{ set.sectionTitle }}</h2>
-			<div data-ng-repeat="question in set.questions" data-new-find-question="question"></div>
+		<div class="set" data-ng-repeat="set in data" data-ng-class="{'open': set.expandedDisplay}" data-ng-click="set.expandedDisplay =! set.expandedDisplay">
+			<h2>
+				<i data-ng-if="!set.expandedDisplay" class="fa fa-plus" aria-hidden="true"></i>
+				<i data-ng-if="set.expandedDisplay" class="fa fa-minus" aria-hidden="true"></i>
+				{{ set.sectionTitle }}</h2>
+			<div data-ng-if="set.expandedDisplay" data-ng-repeat="question in set.questions" data-new-find-question="question"></div>
 		</div>
 
 	</form>

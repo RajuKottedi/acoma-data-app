@@ -16,16 +16,35 @@
 	}
 
 	h2 {
-		margin-top: @defaultMargin;
+		padding: @defaultMargin 0;
+		color: @submarine;
+
+		i { margin-right: @defaultMargin; }
+	}
+
+	h2:hover {
+		color: @submarine-dark;
+		cursor: pointer;
+	}
+
+	.open {
+		h2 {
+			padding-bottom: @defaultMargin * 2;
+			border-bottom: solid 1px rgba(0,0,0,.1);
+		}
 	}
 
 	.set {
+
+		padding: @defaultMargin;
 		
 		&:nth-child(even) {
 			background: rgba(0,0,0,.03);
 		}
 
-		padding: @defaultMargin;
+		> div {
+			padding-top: @defaultMargin * 2;
+		}
 
 		input, select, textarea {
 			width: 100%;

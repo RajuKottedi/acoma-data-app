@@ -10,6 +10,7 @@ angular.module('app')
 
 		$scope.data = [{
 			sectionTitle: 'Variables measured on all body sherds',
+			expandedDisplay: true,
 			questions: [{
 				id: null,
 				label: 'Clay Color/Ware',
@@ -220,7 +221,8 @@ angular.module('app')
 				unit: 'per sq cm'
 			}]
 		}, {
-			sectionTitle: 'Variables only measured on rim sherds',
+			sectionTitle: 'Only measured on rim sherds',
+			expandedDisplay: false,
 			questions: [{
 				id: null,
 				label: 'Rim radius',
@@ -262,7 +264,8 @@ angular.module('app')
 				unit: 'per sq cm'
 			}]
 		}, {
-			sectionTitle: 'Variable only meaured on basal sherds',
+			sectionTitle: 'Only measured on basal sherds',
+			expandedDisplay: false,
 			questions: [{
 				id: null,
 				label: 'Direction of coils',
@@ -277,7 +280,8 @@ angular.module('app')
 				unit: ''
 			}]
 		}, {
-			sectionTitle: '',
+			sectionTitle: 'Final notes',
+			expandedDisplay: true,
 			questions: [{
 				id: null,
 				label: 'Notes',
