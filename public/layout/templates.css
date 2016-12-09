@@ -59,6 +59,13 @@ button.primary {
   background-color: #4E7B8E;
   color: #fff;
 }
+button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+button.primary:hover {
+  background-color: #3c5e6d;
+}
 /* Utility Classes */
 .hundy {
   width: 100%;

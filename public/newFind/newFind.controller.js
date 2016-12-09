@@ -348,7 +348,7 @@ angular.module('app')
 					unit: ''
 				}]
 			}, {
-				sectionTitle: 'Final notes',
+				sectionTitle: 'Any other observations',
 				expandedDisplay: true,
 				questions: [{
 					model: null,
@@ -378,6 +378,13 @@ angular.module('app')
 					};
 				}, 1000);
 				// $scope.transmitting = false;
-			};	
+			};
+
+			$scope.cancel = function () {
+				
+				//possibly pop a confirmation window for this
+				$scope.formData = {};
+				$state.go('dashboard');
+			};
 		}
 	]);
