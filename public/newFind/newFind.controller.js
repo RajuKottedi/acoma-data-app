@@ -10,39 +10,36 @@ angular.module('app')
 
 			$scope.formData = {};
 
-			$scope.location = {
-				lat: '',
-				lng: ''
+			$scope.siteInfo = {
+				sectionTitle: 'Find/Site Information',
+				expandedDisplay: false,
+				// questions: [{
+				// 	id: 'site',
+				// 	label: 'Site',
+				// 	description: '',
+				// 	inputType: 'text',
+				// 	disabled: true,
+				// 	value: 'Example Site Name',
+				// }, {
+				// 	id: 'lat',
+				// 	label: 'Latitude',
+				// 	description: '',
+				// 	inputType: 'text',
+				// 	disabled: true,
+				// 	value: '',
+				// 	placeholder: 'Fetching latitude...'
+				// }, {
+				// 	id: 'lng',
+				// 	label: 'Longitude',
+				// 	description: '',
+				// 	inputType: 'text',
+				// 	disabled: true,
+				// 	value: '',
+				// 	placeholder: 'Fetching longitude...'
+				// }]
 			};
 
 			$scope.data = [{
-				sectionTitle: 'Find/Site Information',
-				expandedDisplay: false,
-				questions: [{
-					id: 'site',
-					label: 'Site',
-					description: '',
-					inputType: 'text',
-					disabled: true,
-					value: 'Example Site Name',
-				}, {
-					id: null,
-					label: 'Latitude',
-					description: '',
-					inputType: 'text',
-					disabled: true,
-					value: '',
-					placeholder: 'Fetching latitude...'
-				}, {
-					id: null,
-					label: 'Longitude',
-					description: '',
-					inputType: 'text',
-					disabled: true,
-					value: '',
-					placeholder: 'Fetching longitude...'
-				}]
-			}, {
 				sectionTitle: 'Variables measured on all body sherds',
 				expandedDisplay: true,
 				questions: [{
@@ -379,6 +376,8 @@ angular.module('app')
 
 				var d = new Date();
 
+				console.log($scope.formData);
+
 				$scope.transmitting = true;
 				//replace timeout (for example purpose) with call to save to local storage calls here
 				$timeout(function () {
@@ -401,8 +400,8 @@ angular.module('app')
 			$scope.initialize = function () {
 				if (navigator.geolocation) {
 					navigator.geolocation.getCurrentPosition(function (position) {
-						$scope.location.lat = position.coords.latitude;
-						$scope.location.lng = position.coords.longitude;
+						$scope.formData.lat = position.coords.latitude;
+						$scope.formData.lng = position.coords.longitude;
 					});
 				}
 			};

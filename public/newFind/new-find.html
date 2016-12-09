@@ -3,6 +3,48 @@
 	<h1>Enter a new find</h1>
 
 	<form data-ng-submit="submit()" novalidate name="form.newFindForm">
+		
+		<div class="set" data-ng-class="{'open': siteInfo.expandedDisplay}"">
+			<h2 data-ng-click="siteInfo.expandedDisplay =! siteInfo.expandedDisplay">
+				<i data-ng-if="!siteInfo.expandedDisplay" class="fa fa-plus" aria-hidden="true"></i>
+				<i data-ng-if="siteInfo.expandedDisplay" class="fa fa-minus" aria-hidden="true"></i>
+				{{ siteInfo.sectionTitle }}
+			</h2>
+			<div data-ng-if="siteInfo.expandedDisplay">
+
+			<div class="row">
+
+				<div class="col-1">
+					<label data-ng-click="displayInfo = !displayInfo" for="">  <i data-ng-if="question.description" class="fa fa-question-circle"></i></label>
+				</div>
+
+				<div class="col-2">
+				
+					<!-- Site Info -->
+					<input
+						type="text"
+						data-ng-disabled="true"
+						data-model="formData.site"
+						data-ng-attr-id="{{ question.id }}"
+						data-ng-attr-placeholder="{{ question.placeholder }}">
+
+					<!-- Location -->
+					<input
+						type="text"
+						data-ng-disabled="true"
+						data-model="formData.lat"
+						data-ng-attr-placeholder="Fetching latitude...">
+
+					<input
+						type="text"
+						data-ng-disabled="true"
+						data-model="formData.lng"
+						data-ng-attr-placeholder="Fetching longitude...">
+					</div>
+				</div>
+
+			</div>
+		</div>
 
 		<div class="set" data-ng-repeat="set in data" data-ng-class="{'open': set.expandedDisplay}">
 			<h2 data-ng-click="set.expandedDisplay =! set.expandedDisplay">

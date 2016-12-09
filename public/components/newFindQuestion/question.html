@@ -4,13 +4,13 @@
 		<label data-ng-click="displayInfo = !displayInfo" for="">{{ question.label }}  <i data-ng-if="question.description" class="fa fa-question-circle"></i></label>
 	</div>
 	<div class="col-2">
-
+	
 		<!-- I. type is text or undefined -->
 		<input
 			data-ng-if="question.inputType === 'text' || !question.inputType"
 			type="text"
 			data-ng-disabled="question.disabled"
-			data-model="question.id"
+			data-model="formData[question.id]"
 			data-ng-attr-id="{{ question.id }}"
 			data-ng-attr-placeholder="{{ question.placeholder }}">
 
@@ -19,19 +19,19 @@
 			data-ng-if="question.inputType === 'select'"
 			data-ng-disabled="question.disabled"
 			data-ng-attr-id="{{ question.id }}"
-			data-ng-model="question.id"
+			data-ng-model="formData[question.id]"
 			data-ng-options="question.label for question in question.options">
 				<option value="" selected="selected">Choose option</option>
 			</select>
 
 		<!-- III. type is textarea -->
-		<textarea data-ng-if="question.inputType === 'textarea'" data-ng-disabled="question.disabled" data-ng-attr-placeholder="{{ question.placeholder }}"></textarea>
+		<textarea data-ng-model="formData[question.id]" data-ng-if="question.inputType === 'textarea'" data-ng-disabled="question.disabled" data-ng-attr-placeholder="{{ question.placeholder }}"></textarea>
 		
 		<input
 			data-ng-if="question.inputType === 'number'"
 			type="number"
 			data-ng-disabled="question.disabled"
-			data-ng-model="question.id"
+			data-ng-model="formData[question.id]"
 			data-ng-attr-id="{{ question.id }}"
 			data-ng-attr-placeholder="{{ question.placeholder }}"> <span class="unit" data-ng-if="question.unit">{{ question.unit }}</span>
 
