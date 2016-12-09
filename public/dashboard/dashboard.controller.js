@@ -5,57 +5,57 @@ angular.module('app')
 		$scope.heading = 'Cibola Ceramic Analysis App';
 
 		$scope.previousFinds = [{
-			id: 'FIND1A2D',
+			id: '20161231-10:30:23-35.0695-108.8484',
 			site: 'Zuni',
 			desc: 'information about this',
 			date: '11/11/2016'
 		}, {
-			id: 'FIND2ADE',
+			id: '20161231.10:30:23.35.0695',
 			site: 'Zuni',
 			desc: 'information masdfa this',
 			date: '11/11/2016'
 		}, {
-			id: 'FIAD2A4E',
+			id: '20161231.10:30:23.35.0695',
 			site: 'Zuni',
 			desc: 'information about this okay',
 			date: '11/11/2016'
 		}, {
-			id: 'FGGD2A4E',
+			id: '20161231.10:30:23.35.0695',
 			site: 'Zuni',
 			desc: 'information about this hi',
 			date: '11/11/2016'
 		}, {
-			id: 'FGGD2A4E',
+			id: '20161231.10:30:23.35.0695',
 			site: 'Zuni',
 			desc: 'information about this hi',
 			date: '11/11/2016'
 		}, {
-			id: 'FGGD2A4E',
+			id: '20161231.10:30:23.35.0695',
 			site: 'Zuni',
 			desc: 'information about this hi',
 			date: '11/11/2016'
 		}, {
-			id: 'FGGD2A4E',
+			id: '20161231.10:30:23.35.0695',
 			site: 'Zuni',
 			desc: 'information about this hi',
 			date: '11/11/2016'
 		}, {
-			id: 'FGGD2A4E',
+			id: '20161231.10:30:23.35.0695',
 			site: 'Zuni',
 			desc: 'information about this hi',
 			date: '11/11/2016'
 		}, {
-			id: 'FGGD2A4E',
+			id: '20161231.10:30:23.35.0695',
 			site: 'Zuni',
 			desc: 'information about this hi',
 			date: '11/11/2016'
 		}, {
-			id: 'FGGD2A4E',
+			id: '20161231.10:30:23.35.0695',
 			site: 'Zuni',
 			desc: 'information about this hi',
 			date: '11/11/2016'
 		}, {
-			id: 'FGGD2A4E',
+			id: '20161231.10:30:23.35.0695',
 			site: 'Zuni',
 			desc: 'information about this hi',
 			date: '11/11/2016'

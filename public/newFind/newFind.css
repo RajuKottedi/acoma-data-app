@@ -15,16 +15,34 @@
   margin-right: 24px;
 }
 .new-find h2 {
-  margin-top: 12px;
+  padding: 12px 0;
+  color: #4E7B8E;
+}
+.new-find h2 i {
+  margin-right: 12px;
+}
+.new-find h2:hover {
+  color: #17475C;
+  cursor: pointer;
+}
+.new-find .open h2 {
+  padding-bottom: 24px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
 }
 .new-find .set {
-  border-left: solid 3px blue;
+  padding: 12px;
+}
+.new-find .set:nth-child(even) {
+  background: rgba(0, 0, 0, 0.03);
+}
+.new-find .set > div {
+  padding-top: 24px;
 }
 .new-find .set input,
 .new-find .set select,
 .new-find .set textarea {
   width: 100%;
-  outline-color: #114BC8;
+  outline-color: #056599;
 }
 .new-find .set input[type="number"] {
   width: 25%;
