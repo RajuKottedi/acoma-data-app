@@ -18,8 +18,10 @@
   margin-top: 12px;
 }
 .new-find .set {
-  border-left: solid 6px #4E7B8E;
-  padding-left: 24px;
+  padding: 12px;
+}
+.new-find .set:nth-child(even) {
+  background: rgba(0, 0, 0, 0.03);
 }
 .new-find .set input,
 .new-find .set select,

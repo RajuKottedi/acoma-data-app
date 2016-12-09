@@ -160,13 +160,8 @@ angular.module('app')
 					{ label: '2 – present on interior only', value: 2 },
 					{ label: '3 – present on both surfaces', value: 3 },
 					{ label: '4 – present on broken edges of sherd', value: 4 },
-					{ label: '5 – no sooting present', value: 5 },
+					{ label: '5 – no sooting present', value: 5 }
 				]
-			}, {
-				id: null,
-				label: 'Notes',
-				inputType: 'textarea',
-				placeholder: 'If you chose "other" for any question, please specify here.'
 			}, {
 				id: null,
 				label: 'Vessel wall thickness',
@@ -223,16 +218,71 @@ angular.module('app')
 				placeholder: '',
 				options: [],
 				unit: 'per sq cm'
-			}, {
-				id: null,
-				label: 'Notes',
-				inputType: 'textarea',
-				placeholder: 'If you chose "other" for any question, please specify here.'
 			}]
 		}, {
 			sectionTitle: 'Variables only measured on rim sherds',
 			questions: [{
-
+				id: null,
+				label: 'Rim radius',
+				description: 'This variable refers to the radius of the vessel opening. This is measured using the rim radius template chart.',
+				inputType: 'number',
+				placeholder: '',
+				options: [],
+				unit: 'per sq cm'
+			}, {
+				id: null,
+				label: 'Distance to coils',
+				description: 'This variable refers to the distance from the top of the rim to the first exposed coil. This is measured using a flexible rule.',
+				inputType: 'number',
+				placeholder: '',
+				options: [],
+				unit: 'per sq cm'
+			}, {
+				id: null,
+				label: 'Rim form',
+				description: 'This variable refers to the general form of the rim in cross-section. Draw rim on back of form.',
+				inputType: 'select',
+				placeholder: '',
+				options: [
+					{ label: '0 – indeterminate', value: 0 },
+					{ label: '1 – flared', value: 1 },
+					{ label: '2 – incurved', value: 2 },
+					{ label: '3 – straight collar', value: 3 },
+					{ label: '4 – straight rim', value: 4 },
+					{ label: '5 – other - specify in notes and draw', value: 5 }
+				],
+				unit: 'per sq cm'
+			}, {
+				id: null,
+				label: 'Rim radius',
+				description: 'This variable refers to the radius of the vessel opening. This is measured using the rim radius template chart.',
+				inputType: 'number',
+				placeholder: '',
+				options: [],
+				unit: 'per sq cm'
+			}]
+		}, {
+			sectionTitle: 'Variable only meaured on basal sherds',
+			questions: [{
+				id: null,
+				label: 'Direction of coils',
+				description: 'This variable refers to the direction that coils when looking at the bottom of the vessel from the exterior.',
+				inputType: 'select',
+				placeholder: '',
+				options: [
+					{ label: '0 – indeterminate', value: 0 },
+					{ label: '1 – clockwise', value: 1 },
+					{ label: '2 – counter-clockwise', value: 2 }
+				],
+				unit: ''
+			}]
+		}, {
+			sectionTitle: '',
+			questions: [{
+				id: null,
+				label: 'Notes',
+				inputType: 'textarea',
+				placeholder: 'If you chose "other" for any question, please specify here.'
 			}]
 		}];
 
