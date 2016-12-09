@@ -1,0 +1,16 @@
+.find-lbl {
+  color: #bbb;
+  letter-spacing: .1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 90%;
+}
+.find-info {
+  font-size: 120%;
+  margin-bottom: 12px;
+}
+.fa-long-arrow-right {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+}
