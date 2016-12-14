@@ -10,36 +10,35 @@ angular.module('app')
 
 			$scope.formData = {};
 
-			$scope.siteInfo = {
+			$scope.data = [{
 				sectionTitle: 'Find/Site Information',
 				expandedDisplay: false,
-				// questions: [{
-				// 	id: 'site',
-				// 	label: 'Site',
-				// 	description: '',
-				// 	inputType: 'text',
-				// 	disabled: true,
-				// 	value: 'Example Site Name',
-				// }, {
-				// 	id: 'lat',
-				// 	label: 'Latitude',
-				// 	description: '',
-				// 	inputType: 'text',
-				// 	disabled: true,
-				// 	value: '',
-				// 	placeholder: 'Fetching latitude...'
-				// }, {
-				// 	id: 'lng',
-				// 	label: 'Longitude',
-				// 	description: '',
-				// 	inputType: 'text',
-				// 	disabled: true,
-				// 	value: '',
-				// 	placeholder: 'Fetching longitude...'
-				// }]
-			};
-
-			$scope.data = [{
+				questions: [{
+					id: 'site',
+					label: 'Site',
+					description: '',
+					inputType: 'text',
+					disabled: true,
+					value: 'Example Site Name',
+					placeholder: 'Site name'
+				}, {
+					id: 'lat',
+					label: 'Latitude',
+					description: '',
+					inputType: 'text',
+					disabled: true,
+					value: '',
+					placeholder: 'Fetching latitude...'
+				}, {
+					id: 'lng',
+					label: 'Longitude',
+					description: '',
+					inputType: 'text',
+					disabled: true,
+					value: '',
+					placeholder: 'Fetching longitude...'
+				}]
+			}, {
 				sectionTitle: 'Variables measured on all body sherds',
 				expandedDisplay: true,
 				questions: [{
