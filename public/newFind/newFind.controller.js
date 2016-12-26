@@ -51,8 +51,8 @@ angular.module('app')
 					placeholder: '',
 					options: [
 						{ label: '0 - indeterminate', value: 0 },
-						{ label: '1- Mogollon Brown Ware', value: 1 },
-						{ label: '2 - indeterminate', value: 2 },
+						{ label: '1 - Cibola Gray Ware', value: 1 },
+						{ label: '2 - Mogollon Brown Ware', value: 2 },
 						{ label: '3 - gray/brown - Puerco Valley Gray Ware', value: 3 },
 						{ label: '99 - other, specify in notes', value: 99 }
 					]
@@ -274,16 +274,6 @@ angular.module('app')
 					placeholder: '',
 					options: [],
 					unit: ''
-				},{
-					id: null,
-					label: 'Number of indentations per sq cm',
-					description: 'This variable refers to the number of indentations per square cm of vessel surface. This is measured by placing the 3x3 cm cardboard cutout over a sherd and recording the number of indentations that are fully visible. If measuring a zoned or patterned corrugated sherd, make sure that unindented portions of the vessel are not visible through the cardboard cutout.',
-					inputType: 'number',
-					disabled: false,
-					value: '',
-					placeholder: '',
-					options: [],
-					unit: 'per sq cm'
 				}]
 			}, {
 				sectionTitle: 'Only measured on rim sherds',
