@@ -64,6 +64,9 @@
 .new-find .set .unit {
   font-style: italic;
 }
+.new-find .set .avg-number input[type='number'] {
+  width: 100%;
+}
 .new-find .form-actions {
   margin-top: 24px;
 }

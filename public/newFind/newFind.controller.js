@@ -4,6 +4,17 @@ angular.module('app')
 
 		function ($scope, $state, $timeout) {
 
+			var count,
+
+			initialize = function () {
+				if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(function (position) {
+						$scope.formData.lat = position.coords.latitude;
+						$scope.formData.lng = position.coords.longitude;
+					});
+				}
+			};
+
 			$scope.heading = 'Back to Dashboard';
 
 			$scope.transmitting = false;
@@ -228,7 +239,7 @@ angular.module('app')
 					id: null,
 					label: 'Width of indentations',
 					description: 'This variable refers to the width of indentations at the widest point. This is measured using the digital calipers. Three indentations are measured for each sherd which will later be averaged.',
-					inputType: 'number',
+					inputType: 'avgNumber',
 					disabled: false,
 					value: '',
 					placeholder: '',
@@ -238,7 +249,7 @@ angular.module('app')
 					id: null,
 					label: 'Depth of indentations',
 					description: 'This variable refers to the difference between the deepest portion of an indentation and the top of the adjacent coil. Three indentations are measured which will later be averaged. This is measured using the digital depth gauge.',
-					inputType: 'number',
+					inputType: 'avgNumber',
 					disabled: false,
 					value: '',
 					placeholder: '',
@@ -248,7 +259,7 @@ angular.module('app')
 					id: null,
 					label: 'Coil width',
 					description: 'This variable provides an estimate of the average size of coils for each sherd. This is the average of three measures from coil juncture to coil juncture.',
-					inputType: 'number',
+					inputType: 'avgNumber',
 					disabled: false,
 					value: '',
 					placeholder: '',
@@ -258,7 +269,7 @@ angular.module('app')
 					id: null,
 					label: 'Number of indentations per sq cm',
 					description: 'This variable refers to the number of indentations per square cm of vessel surface. This is measured by placing the 3x3 cm cardboard cutout over a sherd and recording the number of indentations that are fully visible. If measuring a zoned or patterned corrugated sherd, make sure that unindented portions of the vessel are not visible through the cardboard cutout.',
-					inputType: 'number',
+					inputType: 'avgNumber',
 					disabled: false,
 					value: '',
 					placeholder: '',
@@ -386,15 +397,6 @@ angular.module('app')
 				$state.go('dashboard');
 			};
 
-			$scope.initialize = function () {
-				if (navigator.geolocation) {
-					navigator.geolocation.getCurrentPosition(function (position) {
-						$scope.formData.lat = position.coords.latitude;
-						$scope.formData.lng = position.coords.longitude;
-					});
-				}
-			};
-
-			$scope.initialize();
+			//initialize();
 		}
 	]);
