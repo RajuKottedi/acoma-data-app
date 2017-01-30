@@ -128,7 +128,7 @@ header {
 }
 header .header-query {
   position: absolute;
-  right: 12px;
+  right: 0;
 }
 header.child {
   height: 150px;

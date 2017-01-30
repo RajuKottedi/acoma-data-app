@@ -4,6 +4,12 @@ angular.module('app')
 
 		$scope.heading = 'Cibola Ceramic Analysis';
 
+		$scope.query = { value: '' };
+
+		$scope.updateParent = function (query) {
+			$scope.query = query;
+		};
+
 		$scope.previousFinds = [{
 			id: '20161231-10',
 			site: 'Zuni',
