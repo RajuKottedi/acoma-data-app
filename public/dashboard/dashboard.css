@@ -13,18 +13,21 @@ section.dashboard {
   width: 24%;
   background: #fff;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
-  padding: 12px;
   margin-bottom: 10px;
   position: relative;
-  height: 175px;
+  border: dotted 1px rgba(0, 0, 0, 0.3);
 }
 .dashboard > div p {
   word-break: break-all;
+}
+.dashboard .add-find {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .dashboard .add-find i {
   display: block;
   width: 100%;
   text-align: center;
-  color: #8B250F;
-  line-height: 160px;
+  color: #ADBAC0;
 }

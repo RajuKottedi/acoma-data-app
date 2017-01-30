@@ -23,8 +23,12 @@ h1 {
 }
 
 h2 {
-  font-size: 18px;
-  font-weight: bold;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+h3 {
+	color: @submarine;
 }
 
 //Inputs
@@ -76,6 +80,16 @@ button.navigation {
 	letter-spacing: .1em;
 }
 
+a {
+	color: @linkBlue;
+}
+
+a:hover, a:active {
+	text-decoration: underline;
+	color: darken(@linkBlue, 10%);
+	cursor: pointer;
+}
+
 /* Utility Classes */
 .hundy { width: 100%; }
 .pull-right { float: right; }
@@ -99,7 +113,12 @@ header {
 	box-shadow: 0 0 2px 0 rgba(0,0,0,.1);
 	border-bottom: solid 1px rgba(0,0,0,.05);
 	background: @submarine;
-	padding-left: 12px;
+	padding: 0 12px;
+
+	.header-query {
+		position: absolute;
+		right: 12px;
+	}
 }
 
 header.child {
@@ -114,7 +133,10 @@ header.child {
 	}
 }
 
-article { background: #eee; }
+article {
+	background: #eee;
+	height: 100vh;
+}
 
 /*Default section*/
 article > section { padding: 24px; }
