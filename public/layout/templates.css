@@ -87,6 +87,11 @@ a:active {
   color: #297198;
   cursor: pointer;
 }
+.icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
 /* Utility Classes */
 .hundy {
   width: 100%;
@@ -129,6 +134,12 @@ header {
 header .header-query {
   position: absolute;
   right: 0;
+}
+header .icon {
+  vertical-align: middle;
+  position: relative;
+  bottom: 2px;
+  margin-right: 6px;
 }
 header.child {
   height: 150px;

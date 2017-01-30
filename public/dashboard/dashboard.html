@@ -3,5 +3,6 @@
 		<i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
 	</div>
 	<div data-ng-repeat="find in previousFinds | filter:query.value" data-find="find"></div>
+	<div data-ng-if="!previousFinds.length">None results!</div>
 
 </section>
