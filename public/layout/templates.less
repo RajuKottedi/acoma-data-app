@@ -66,6 +66,16 @@ button.primary:hover {
 	background-color: darken(@submarine, 10%);
 }
 
+button.navigation {
+	background: transparent;
+	text-align: left;
+	color: #fff;
+	padding: 12px 24px;
+	line-height: 50px;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+}
+
 /* Utility Classes */
 .hundy { width: 100%; }
 .pull-right { float: right; }
@@ -81,13 +91,14 @@ button.primary:hover {
 header {
 	width: 100%;
 	height: 50px;
-	color: #2d2d2d;
+	color: #fff;
 	text-align: center;
 	line-height: 50px;
 	text-transform: uppercase;
 	letter-spacing: .1em;
 	box-shadow: 0 0 2px 0 rgba(0,0,0,.1);
 	border-bottom: solid 1px rgba(0,0,0,.05);
+	background: @submarine;
 }
 
 header.child {
@@ -103,5 +114,6 @@ header.child {
 }
 
 article { background: #eee; }
+
 /*Default section*/
 article > section { padding: 24px; }

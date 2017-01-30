@@ -269,7 +269,7 @@ angular.module('app')
 					id: null,
 					label: 'Number of indentations per sq cm',
 					description: 'This variable refers to the number of indentations per square cm of vessel surface. This is measured by placing the 3x3 cm cardboard cutout over a sherd and recording the number of indentations that are fully visible. If measuring a zoned or patterned corrugated sherd, make sure that unindented portions of the vessel are not visible through the cardboard cutout.',
-					inputType: 'avgNumber',
+					inputType: 'number',
 					disabled: false,
 					value: '',
 					placeholder: '',
@@ -279,11 +279,15 @@ angular.module('app')
 					id: null,
 					label: 'Proportion of obliterated coils',
 					description: 'This variable refers to the proportion of coils that are obliterated. Obliteration refers to the smoothing of coil junctures so that they are only visible through the indentations. This variable is measured by counting the total number of coils and obliterated coils visible.',
-					inputType: 'number',
+					inputType: 'select',
 					disabled: false,
 					value: '',
 					placeholder: '',
-					options: [],
+					options: [
+						{ label: '0 - none', value: 0 },
+						{ label: '1 - semi-obliterated', value: 1 },
+						{ label: '2 - fully obliterated (this excludes plainwares)', value: 2 }
+					],
 					unit: ''
 				}]
 			}, {
