@@ -18,7 +18,8 @@
 				<span data-ng-if="!transmitting">Save to device</span>
 				<span data-ng-if="transmitting">Saving...</span>
 			</button>
-			<p class="margin-top-2x" data-ng-if="saveAlert.display">{{ saveAlert.message }}</span>
+			<p class="margin-top-2x" data-ng-if="saveAlert.display"><i class="fa fa-check-circle" aria-hidden="true"></i>
+ {{ saveAlert.message }}</span>
 		</div>
 
 	</form>

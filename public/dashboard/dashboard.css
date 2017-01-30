@@ -10,13 +10,13 @@ section.dashboard {
   justify-content: space-between;
 }
 .dashboard > div {
-  height: 200px;
   width: 24%;
   background: #fff;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
   padding: 12px;
   margin-bottom: 10px;
   position: relative;
+  height: 175px;
 }
 .dashboard > div p {
   word-break: break-all;
@@ -26,5 +26,5 @@ section.dashboard {
   width: 100%;
   text-align: center;
   color: #8B250F;
-  line-height: 180px;
+  line-height: 160px;
 }

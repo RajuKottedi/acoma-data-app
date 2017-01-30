@@ -1,9 +1,8 @@
-@import './variables.less';
+@import './layout/variables.less';
 
 section.dashboard {
 	padding: 12px;
-	// background: #eee;
-	background: @niceGray;
+	background: #eee;
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
@@ -15,15 +14,17 @@ section.dashboard {
 }
 
 .dashboard > div {
-	height: 200px;
 	width: 24%;
 	background: #fff;
 	box-shadow: 0 0 5px 0 rgba(0,0,0,.1);
 	padding: 12px;
 	margin-bottom: 10px;
 	position: relative;
+	height: 175px;
 
-	p { word-break: break-all; }
+	p {
+		word-break: break-all;
+	}
 }
 
 .dashboard .add-find i {
@@ -31,5 +32,5 @@ section.dashboard {
 	width: 100%;
 	text-align: center;
 	color: #8B250F;
-	line-height: 180px;
+	line-height: 160px;
 }

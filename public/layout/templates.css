@@ -104,16 +104,15 @@ button.navigation {
   margin-top: 24px;
 }
 header {
-  width: 100%;
   height: 50px;
   color: #fff;
-  text-align: center;
   line-height: 50px;
   text-transform: uppercase;
   letter-spacing: .1em;
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
   border-bottom: solid 1px rgba(0, 0, 0, 0.05);
   background: #4E7B8E;
+  padding-left: 12px;
 }
 header.child {
   height: 150px;
@@ -132,4 +131,8 @@ article {
 /*Default section*/
 article > section {
   padding: 24px;
+}
+/* Icons */
+.fa-check-circle {
+  color: #49A949;
 }
