@@ -7,10 +7,10 @@ section.dashboard {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
-  justify-content: space-between;
 }
 .dashboard > div {
   width: 24%;
+  margin-right: 1%;
   background: #fff;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
@@ -19,6 +19,18 @@ section.dashboard {
 }
 .dashboard > div p {
   word-break: break-all;
+}
+.dashboard > div:nth-child(4n) {
+  margin-right: 0;
+  width: 25%;
+}
+.dashboard .no-finds {
+  flex: 2;
+  margin-left: 12px;
+}
+.dashboard .no-finds p {
+  line-height: 150px;
+  text-align: center;
 }
 .dashboard .add-find {
   display: flex;

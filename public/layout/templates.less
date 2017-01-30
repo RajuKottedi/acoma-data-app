@@ -56,6 +56,18 @@ button {
 	font-size: 1em;
 }
 
+button.btn-link {
+	background: transparent;
+	padding: 0;
+	display: inline;
+	color: @linkBlue;
+	&:hover, &:active {
+		color: darken(@linkBlue, 10%);
+		text-decoration: underline;
+		cursor: pointer;
+	}
+}
+
 button.primary {
 	background-color: @submarine;
 	color: #fff;
@@ -107,6 +119,10 @@ a:hover, a:active {
 .margin-top { margin-top: @defaultMargin; }
 .margin-bottom { margin-bottom: @defaultMargin; }
 .margin-top-2x { margin-top: @defaultMargin * 2; }
+
+strong {
+	font-weight: bold;
+}
 
 header {
 	// width: 100%;

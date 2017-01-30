@@ -58,6 +58,18 @@ button {
   border-radius: 3px;
   font-size: 1em;
 }
+button.btn-link {
+  background: transparent;
+  padding: 0;
+  display: inline;
+  color: #348FC0;
+}
+button.btn-link:hover,
+button.btn-link:active {
+  color: #297198;
+  text-decoration: underline;
+  cursor: pointer;
+}
 button.primary {
   background-color: #4E7B8E;
   color: #fff;
@@ -119,6 +131,9 @@ a:active {
 }
 .margin-top-2x {
   margin-top: 24px;
+}
+strong {
+  font-weight: bold;
 }
 header {
   height: 50px;
