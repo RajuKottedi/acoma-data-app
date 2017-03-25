@@ -30,6 +30,9 @@ h2 {
   font-size: 18px;
   font-weight: bold;
 }
+h3 {
+  color: #4E7B8E;
+}
 input[type="text"],
 input[type="number"],
 select,
@@ -55,6 +58,19 @@ button {
   border-radius: 3px;
   font-size: 1em;
 }
+button.btn-link {
+  background: transparent;
+  padding: 0;
+  display: inline;
+  color: #348FC0;
+}
+button.btn-link:hover,
+button.btn-link:active {
+  color: #297198;
+  text-decoration: underline;
+  cursor: pointer;
+  background: transparent;
+}
 button.primary {
   background-color: #4E7B8E;
   color: #fff;
@@ -74,6 +90,20 @@ button.navigation {
   line-height: 50px;
   text-transform: uppercase;
   letter-spacing: .1em;
+}
+a {
+  color: #348FC0;
+}
+a:hover,
+a:active {
+  text-decoration: underline;
+  color: #297198;
+  cursor: pointer;
+}
+.icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
 }
 /* Utility Classes */
 .hundy {
@@ -103,17 +133,29 @@ button.navigation {
 .margin-top-2x {
   margin-top: 24px;
 }
+strong {
+  font-weight: bold;
+}
 header {
-  width: 100%;
   height: 50px;
   color: #fff;
-  text-align: center;
   line-height: 50px;
   text-transform: uppercase;
   letter-spacing: .1em;
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
   border-bottom: solid 1px rgba(0, 0, 0, 0.05);
   background: #4E7B8E;
+  padding: 0 12px;
+}
+header .header-query {
+  position: absolute;
+  right: 0;
+}
+header .icon {
+  vertical-align: middle;
+  position: relative;
+  bottom: 2px;
+  margin-right: 6px;
 }
 header.child {
   height: 150px;
@@ -128,8 +170,13 @@ header.child i {
 }
 article {
   background: #eee;
+  height: 100vh;
 }
 /*Default section*/
 article > section {
   padding: 24px;
+}
+/* Icons */
+.fa-check-circle {
+  color: #49A949;
 }

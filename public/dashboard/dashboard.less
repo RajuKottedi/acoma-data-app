@@ -1,9 +1,8 @@
-@import './variables.less';
+@import './layout/variables.less';
 
 section.dashboard {
 	padding: 12px;
-	// background: #eee;
-	background: @niceGray;
+	background: #eee;
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
@@ -11,25 +10,47 @@ section.dashboard {
 	display: flex;
 
 	-webkit-flex-flow: row wrap;
-	justify-content: space-between;
 }
 
 .dashboard > div {
-	height: 200px;
 	width: 24%;
+	margin-right: 1%;
 	background: #fff;
 	box-shadow: 0 0 5px 0 rgba(0,0,0,.1);
-	padding: 12px;
 	margin-bottom: 10px;
 	position: relative;
+	border: dotted 1px rgba(0,0,0,.3);
 
-	p { word-break: break-all; }
+	p {
+		word-break: break-all;
+	}
+
+	&:nth-child(4n) {
+		margin-right: 0;
+		width: 25%;
+	}
+}
+
+.dashboard .no-finds {
+	flex: 2;
+	margin-left: 12px;
+
+	p {
+		line-height: 150px;
+		text-align: center;
+	}
+}
+
+.dashboard .add-find {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 150px;
 }
 
 .dashboard .add-find i {
 	display: block;
 	width: 100%;
 	text-align: center;
-	color: #8B250F;
-	line-height: 180px;
+	color: @submarine-white;
 }
