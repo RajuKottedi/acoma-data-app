@@ -21,6 +21,7 @@ angular.module('app')
 
 			$scope.formData = {};
 
+			//put this in a config file (JSON)
 			$scope.data = [{
 				sectionTitle: 'Find/Site Information',
 				expandedDisplay: false,

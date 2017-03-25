@@ -36,7 +36,8 @@ function handleDatabase (req, res) {
 		connection.on('error', function (err) {
 			res.json({ "code": 500, "status": "Error in database connection" });
 			return;
-		})
+		});
+		
 	});
 
 }
@@ -47,7 +48,7 @@ var apiRouter = express.Router();
 //REST API for the app
 //for pinging
 apiRouter.get('/', function(req, res) {
-	res.json({message : 'API is up and running'});
+	handleDatabase(req, res);
 });
 
 // //users REST API
