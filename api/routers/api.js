@@ -4,8 +4,8 @@ var mysql = require('mysql');
 var pool = mysql.createPool({
 	connectionLimit: 100, //important - no crashy
 	host     : 'localhost',
-	user     : 'root',
-	password : 'x273vrZZ!',
+	user     : '<user here>', //I use root because I suck
+	password : '<password_here>',
 	database : 'db_cibola',
 	debug    :  false
 });
