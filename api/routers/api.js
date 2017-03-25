@@ -116,6 +116,6 @@ apiRouter.post('/finds', function (req, res) {
 });
 
 //UPDATE existing record
-apiRouter.route('/finds/id/:find_id');
+//apiRouter.route('/finds/id/:find_id');
 
 module.exports = apiRouter;
