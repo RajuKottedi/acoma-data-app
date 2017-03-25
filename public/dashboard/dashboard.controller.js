@@ -1,6 +1,6 @@
 angular.module('app')
 
-	.controller('dashboard.controller', ['$scope', '$state', function ($scope, $state) {
+	.controller('dashboard.controller', ['$scope', '$state', '$http', function ($scope, $state, $http) {
 
 		$scope.heading = 'Cibola Ceramic Analysis';
 
@@ -10,97 +10,13 @@ angular.module('app')
 			$scope.query = query;
 		};
 
-		$scope.previousFinds = [{
-			id: '20161231-10',
-			site: 'Zuni',
-			desc: 'information about this',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10',
-			site: 'Zuni',
-			desc: 'information masdfa this',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10',
-			site: 'Chaco',
-			desc: 'information about this okay',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10',
-			site: 'Chaco',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10',
-			site: 'Clearwater',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10',
-			site: 'Clearwater',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10',
-			site: 'Zuni',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10',
-			site: 'Clearwater',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10',
-			site: 'Zuni',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10',
-			site: 'Chaco',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10',
-			site: 'Zuni',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10',
-			site: 'Zuni',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10',
-			site: 'Zuni',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10',
-			site: 'Zuni',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10',
-			site: 'Example',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10',
-			site: 'Example',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10',
-			site: 'Example',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10',
-			site: 'Example',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}];
+		$scope.previousFinds = [];
+
+		$http.get('/api/finds').then(function (res) {
+			$scope.previousFinds = res.data;
+		}, function (err) {
+			console.log(err);
+		});
 
 		$scope.goToNewFind = function () {
 			$state.go('newFind');
