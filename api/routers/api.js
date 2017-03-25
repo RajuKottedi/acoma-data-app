@@ -10,7 +10,6 @@ var pool = mysql.createPool({
 	debug    :  false
 });
 
-
 function handleDatabase (req, res) {
 
 	console.log('Trying to connect!');
