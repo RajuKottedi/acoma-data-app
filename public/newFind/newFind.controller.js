@@ -22,13 +22,13 @@ angular.module('app')
 			$scope.formData = {};
 
 			//put this in a config file (JSON)
-			$scope.data = [];
+			$scope.questions = [];
 
 			$http.get('/config/questions.json').then(function (res) {
-				$scope.data = res.data;
-				console.log(res);
+				$scope.questions = res.data;
 			}, function (err) {
 				console.log(err);
+				$scope.questions = [];
 			});
 
 			$scope.backAction = function () {

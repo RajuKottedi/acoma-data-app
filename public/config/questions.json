@@ -268,7 +268,7 @@
 		"unit": ""
 	}]
 }, {
-	"sectionTitle": "'Only measured on rim sherds",
+	"sectionTitle": "Only measured on rim sherds",
 	"expandedDisplay": false,
 	"questions": [{
 		"id": null,
@@ -319,7 +319,7 @@
 		"unit": "per sq cm"
 	}]
 }, {
-	"sectionTitle": "'Only measured on basal sherds",
+	"sectionTitle": "Only measured on basal sherds",
 	"expandedDisplay": false,
 	"questions": [{
 		"id": null,
@@ -337,7 +337,7 @@
 		"unit": ""
 	}]
 }, {
-	"sectionTitle": "'Any other observations",
+	"sectionTitle": "Any other observations",
 	"expandedDisplay": true,
 	"questions": [{
 		"id": null,

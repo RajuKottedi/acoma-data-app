@@ -4,7 +4,7 @@
 
 	<form data-ng-submit="submit()" novalidate name="form.newFindForm">
 
-		<div class="set" data-ng-repeat="set in data" data-ng-class="{'open': set.expandedDisplay}">
+		<div class="set" data-ng-repeat="set in questions" data-ng-class="{'open': set.expandedDisplay}">
 			<h2 data-ng-click="set.expandedDisplay =! set.expandedDisplay">
 				<i data-ng-if="!set.expandedDisplay" class="fa fa-plus" aria-hidden="true"></i>
 				<i data-ng-if="set.expandedDisplay" class="fa fa-minus" aria-hidden="true"></i>
@@ -18,8 +18,8 @@
 				<span data-ng-if="!transmitting">Save to device</span>
 				<span data-ng-if="transmitting">Saving...</span>
 			</button>
-			<p class="margin-top-2x" data-ng-if="saveAlert.display"><i class="fa fa-check-circle" aria-hidden="true"></i>
- {{ saveAlert.message }}</span>
+			<p class="margin-top-2x" data-ng-if="saveAlert.display">
+			<i class="fa fa-check-circle" aria-hidden="true"></i> {{ saveAlert.message }}</p>
 		</div>
 
 	</form>
