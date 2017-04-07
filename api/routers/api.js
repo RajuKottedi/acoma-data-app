@@ -9,8 +9,8 @@ var BAD_REQUEST = { "status": 400, "statusText": "The client created  bad reques
 var pool = mysql.createPool({
 	connectionLimit: 100, //important - no crashy
 	host     : 'localhost',
-	user     : 'root', //I use root because I suck
-	password : 'x273vrZZ!',
+	user     : 'root', //replace with credentials
+	password : 'password', //replace with credentials
 	database : 'db_cibola',
 	debug    :  false
 });
