@@ -30,7 +30,7 @@ angular.module('app')
 			//put this in a config file (JSON)
 			$scope.questions = [];
 
-			$http.get('/config/questions.json').then(function (res) {
+			$http.get('./config/questions.json').then(function (res) {
 				$scope.questions = res.data;
 			}, function (err) {
 				console.log(err);
@@ -57,21 +57,24 @@ angular.module('app')
 				$scope.transmitting = true;
 
 				$http.post('/api/finds', $scope.formData).then(function (res) {
-					
-					console.log(res);
-					
+										
 					$scope.transmitting = false;
 					
 					$scope.saveAlert = {
 						display: true,
-						message: 'Successfully saved at ' + d.toTimeString()
+						message: 'Successfully saved at ' + d.toTimeString(),
+						type: 'success'
 					};
 						
 				}, function (err) {
 
-					console.log(err);
-
 					$scope.transmitting = false;
+
+					$scope.saveAlert = {
+						display: true,
+						message: err.statusText,
+						type: 'error'
+					};
 
 				});
 

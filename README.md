@@ -6,7 +6,9 @@ A data collection application
 3. run 'npm install' (npm has to be installed on your computer) - this will pull in dependencies
 4. run http-server in /public
 
-5. to run less: watch-less -c -e .css -i ./resources/ in public directory
+5. to run less watch: watch-less -c -e .css -i ./resources/ in public directory
+-- OR --
+6. to compile less main, run "lessc base.less base.css"
 
 Info
 1. First accordion is expanded because it's required for each find
