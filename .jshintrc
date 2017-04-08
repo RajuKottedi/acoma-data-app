@@ -1,0 +1,10 @@
+{
+	"globals": {
+		"require": false,
+		"module": false,
+		"process": false
+	},
+	"strict": "global",
+	"undef": true,
+	"unused": true
+}
