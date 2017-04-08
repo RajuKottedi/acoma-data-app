@@ -12,6 +12,8 @@ angular.module('app')
 
 		$scope.previousFinds = [];
 
+		//if there's a connection, otherwise get them all from localStorage and display those
+		//should there be checkboxes to sync selected ones? or do you have to sync all?
 		$http.get('/api/finds').then(function (res) {
 			$scope.previousFinds = res.data;
 		}, function (err) {
