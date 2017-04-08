@@ -1,18 +1,23 @@
+'use strict';
+
 var express = require('express');
 var mysql = require('mysql');
+var env = process.env.NODE_ENV || 'development'; //for prod, this needs set as env variable
+var config = require('../config/config')[env];
 
-var DB_CONNECT_ERR = { "status": 500, "status": "Error connecting to database." };
-var NOT_FOUND = { "status": 404, "statusText": "Resource not found." };
+//Error handling
+var DB_CONNECT_ERR = { "status": 500, "statusText": "Error connecting to database." };
 var BAD_REQUEST = { "status": 400, "statusText": "The client created  bad request." };
+//var NOT_FOUND = { "status": 404, "statusText": "Resource not found." };
 
 //using pool instead of connect to allow multiple threads
 var pool = mysql.createPool({
 	connectionLimit: 100, //important - no crashy
-	host     : 'localhost',
-	user     : 'root', //I use root because I suck
-	password : 'x273vrZZ!',
-	database : 'db_cibola',
-	debug    :  false
+	host     : config.database.host,
+	user     : config.database.user,
+	password : config.database.password,
+	database : config.database.database,
+	debug    : config.database.debug
 });
 
 function handleDatabase (req, res) {
@@ -25,9 +30,7 @@ function handleDatabase (req, res) {
 			return;
 		}
 
-		console.log("Connected as ID " + connection.threadId);
-
-		connection.on('error', function (err) {
+		connection.on('error', function () {
 			res.json(DB_CONNECT_ERR);
 			return;
 		});
@@ -69,7 +72,7 @@ apiRouter.get('/finds', function (req, res) {
 
 		});
 
-		connection.on('error', function (err) {
+		connection.on('error', function () {
 			res.json(DB_CONNECT_ERR);
 			return;
 		});
@@ -81,9 +84,9 @@ apiRouter.post('/finds', function (req, res) {
 	
 	//SET to be insert into DB
 	var find = {
-		find_id: req.body.find_id || null,
+		find_id: req.body.findId || null,
 		SID: req.body.SID || null,
-		date_collected: req.body.date_collected
+		date_collected: req.body.dateCollected
 	};
 
 	//if not all the required params exist, throw error
@@ -106,7 +109,7 @@ apiRouter.post('/finds', function (req, res) {
 
 		});
 
-		connection.on('error', function (err) {
+		connection.on('error', function () {
 			res.json(DB_CONNECT_ERR);
 			return;
 		});

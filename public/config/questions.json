@@ -2,29 +2,13 @@
 	"sectionTitle": "Find/Site Information",
 	"expandedDisplay": false,
 	"questions": [{
-		"id": "site",
+		"id": "SID",
 		"label": "Site",
 		"description": "",
 		"inputType": "text",
-		"disabled": true,
+		"disabled": false,
 		"value": "Example Site Name",
 		"placeholder": "Site name"
-	}, {
-		"id": "lat",
-		"label": "Latitude",
-		"description": "",
-		"inputType": "text",
-		"disabled": true,
-		"value": "",
-		"placeholder": "Fetching latitude..."
-	}, {
-		"id": "lng",
-		"label": "Longitude",
-		"description": "",
-		"inputType": "text",
-		"disabled": true,
-		"value": "",
-		"placeholder": "Fetching longitude..."
 	}]
 }, {
 	"sectionTitle": "Variables measured on all body sherds",

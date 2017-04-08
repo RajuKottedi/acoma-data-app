@@ -7,10 +7,16 @@ angular.module('app')
 			var count,
 
 			initialize = function () {
+
 				if (navigator.geolocation) {
+
 					navigator.geolocation.getCurrentPosition(function (position) {
+
 						$scope.formData.lat = position.coords.latitude;
 						$scope.formData.lng = position.coords.longitude;
+
+					}, function (err) {
+						console.log(err);
 					});
 				}
 			};
@@ -31,6 +37,11 @@ angular.module('app')
 				$scope.questions = [];
 			});
 
+			//need to add rounding
+			$scope.formatAverage = function (val1, val2, val3) {
+				return (((val1 ? val1 : 0) + (val2 ? val2 : 0) + (val3 ? val3 : 0)) / 3).toFixed(2);
+			};
+
 			$scope.backAction = function () {
 				$state.go('dashboard');
 			};
@@ -39,18 +50,31 @@ angular.module('app')
 
 				var d = new Date();
 
-				console.log($scope.formData);
+				$scope.formData.dateCollected = d;
+
+				$scope.findId = $scope.formData.SID + '' + $scope.formData.dateCollected;
 
 				$scope.transmitting = true;
-				//replace timeout (for example purpose) with call to save to local storage calls here
-				$timeout(function () {
+
+				$http.post('/api/finds', $scope.formData).then(function (res) {
+					
+					console.log(res);
+					
 					$scope.transmitting = false;
+					
 					$scope.saveAlert = {
 						display: true,
 						message: 'Successfully saved at ' + d.toTimeString()
 					};
-				}, 1000);
-				// $scope.transmitting = false;
+						
+				}, function (err) {
+
+					console.log(err);
+
+					$scope.transmitting = false;
+
+				});
+
 			};
 
 			$scope.cancel = function () {
@@ -60,6 +84,6 @@ angular.module('app')
 				$state.go('dashboard');
 			};
 
-			//initialize();
+			initialize();
 		}
 	]);

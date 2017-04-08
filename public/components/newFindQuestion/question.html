@@ -19,10 +19,14 @@
 			data-ng-if="question.inputType === 'select'"
 			data-ng-disabled="question.disabled"
 			data-ng-attr-id="{{ question.id }}"
-			data-ng-model="formData[question.id]"
-			data-ng-options="question.label for question in question.options">
-				<option value="" selected="selected">Choose option</option>
+			data-ng-model="formData[question.id].options"
+			data-ng-options="question as question.label for question in question.options track by question.id">
+
+				<option value="question.value" selected="selected">Choose option</option>
+			
 			</select>
+
+		<!-- item as item.label for item in items track by item.id -->
 
 		<!-- III. type is textarea -->
 		<textarea data-ng-model="formData[question.id]" data-ng-if="question.inputType === 'textarea'" data-ng-disabled="question.disabled" data-ng-attr-placeholder="{{ question.placeholder }}"></textarea>
