@@ -24,10 +24,10 @@ function config ($urlRouterProvider, $stateProvider) {
 		views: {
 			'body@': {
 				templateUrl: 'layout/child-default.tmpl.html',
-				controller: 'newFind.controller'
+				controller: 'newFindForm.controller'
 			},
 			'main@newFind': {
-				templateUrl: 'newFind/new-find.html'
+				templateUrl: 'newFindForm/new-find-form.html'
 			}
 		}
 	});

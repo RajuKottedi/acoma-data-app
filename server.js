@@ -2,7 +2,9 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-var port = process.env.PORT || 8080;
+var env = process.env.NODE_ENV || 'development'; //for prod, this needs set as env variable
+var config = require('./api/config/config')[env];
+var port = process.env.PORT || config.server.port || 8080;
 
 //import router for our public REST API
 var apiRouter  = require('./api/routers/api')
