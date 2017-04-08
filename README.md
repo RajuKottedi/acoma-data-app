@@ -14,3 +14,7 @@ Info
 1. First accordion is expanded because it's required for each find
 2. when submitting, the form generates an ID
 3. lat lng
+
+- TODO
+- take out search box :(
+- dashboard local storage
