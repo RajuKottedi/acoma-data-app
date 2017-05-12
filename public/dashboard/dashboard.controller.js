@@ -52,12 +52,20 @@ angular.module('app')
 
 				if (navigator && navigator.onLine) {
 
-					$http.post('/api/finds').then(function (res) {
-						console.debug(res);
-					}, function (err) {
-						$scope.alert = err && err.data;
-						setErrorTimer();
-					});
+					for (var i=0;i<$scope.previousFinds.length;i++) {
+
+						$http({
+							url: '/api/finds',
+							method: 'POST',
+							data: $scope.previousFinds[i] 
+						}).then(function (res) {
+							console.debug(res);
+						}, function (err) {
+							$scope.alert = err && err.data;
+							setErrorTimer();
+						});
+					}
+
 
 				} else {
 

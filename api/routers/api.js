@@ -81,7 +81,7 @@ apiRouter.get('/finds', function (req, res) {
 });
 
 apiRouter.post('/finds', function (req, res) {
-	
+
 	//SET to be insert into DB
 	var find = {
 		find_id: req.body.findId || null,
@@ -101,7 +101,7 @@ apiRouter.post('/finds', function (req, res) {
 			return;
 		}
 
-		connection.query("INSERT INTO tbl_finds SET ?", find, function (err, rows) {
+		connection.query("INSERT INTO tbl_all_finds SET ?", find, function (err, rows) {
 			
 			connection.release();
 

@@ -3,13 +3,16 @@
 	<div class="find-heading">
 		<!-- <h4 data-ng-if="find.findId">{{ find.findId }}</h4>
 		<h4 data-ng-if="!find.findId">Unknown ID</h4> -->
-		<h4>{{ find.SID }}</h4>
+		<h4 data-ng-if="find.SID">{{ find.SID }}</h4>
+		<h4 data-ng-if="!find.SID">Unknown ID</h4>
 	</div>
 	
 	<!-- <span class="fa fa-angle-right fa-2x" aria-hidden="true"></span> -->
 	<p><span class="find-lbl">Latitude</span><br><strong>{{ find.location.lat }}</strong></p>
 	<p><span class="find-lbl">Longitude</span><br><strong>{{ find.location.lng }}</strong></p>
+	<p><span class="find-lbl">Timestamp</span><br><strong>{{ find.dateCollected }}</strong></p>
 	
-	<i class="fa fa-long-arrow-right"></i>
+	<!-- to do - add in if we want viewing/editing -->
+	<!-- <i class="fa fa-long-arrow-right"></i> -->
 
 </div>
