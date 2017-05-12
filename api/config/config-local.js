@@ -8,16 +8,15 @@ var config = {
 	//local - need to match dev's env
 	development: {
 		database: {
-			host: '127.0.0.1',
-			port: '8080',
-			db: 'db_cibola',
+			host: 'localhost',
+			database: 'db_cibola',
 			user: 'root',
-			password: 'password',
+			password: 'x273vrZZ!',
 			debug: true
 		},
 		server: {
 			host: '127.0.0.1',
-			port: '8080'
+			port: '8081'
 		}
 	},
 
