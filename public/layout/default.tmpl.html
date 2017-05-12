@@ -1,7 +1,17 @@
 <header data-ui-view="header">
 <!-- If client requests logo - go here -->
 	<!-- <img class="icon" src="resources/images/cibola-white.png" alt="cibola logo"> -->
-<span>{{ heading }}</span>
-	<span class="header-query" data-query="query" data-update-parent="updateParent()"></span>
+	<h1>{{ heading }}</h1>
+	<!-- <span class="header-query" data-query="query" data-update-parent="updateParent()"></span> -->
+	<button data-ng-disabled="!previousFinds.length" type="button" class="pull-right btn-sync" data-ng-click="sync()">
+		<span class="fa fa-refresh fa-lg"></span>
+	</button>
 </header>
+
+<section
+	class="alert-banner"
+	data-ng-class="{'success': alert.type === 'success', 'error': alert.type === 'error' }"
+	data-ng-if="alert.message"><span>{{ alert.statusText }}</span>
+</section>
+
 <article data-ui-view="main"></article>

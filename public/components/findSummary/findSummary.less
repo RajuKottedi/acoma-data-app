@@ -6,13 +6,15 @@
 	.find-heading {
 		margin-bottom: 12px;
 		border-bottom: solid 1px rgba(0,0,0,.2);
+		padding: 12px;
 		
-		h3 {
-			width: 85%;
-			word-break: break-all;
-			color: @niceBlue;
-			padding: 12px;
+		h4 {
 			font-weight: bold;
+			word-break: break-all;
+			line-height: 120%;
+			color: @submarine-dark;
+			font-size: 87.5%;
+			text-transform: uppercase;
 		}
 	}
 
@@ -23,14 +25,18 @@
 		color: @submarine;
 	}
 
+	> p {
+		padding: 0 12px;
+		margin-bottom: 12px;
+		line-height: 120%;
+	}
+
 	.find-lbl {
 		color: @submarine-white;
 		letter-spacing: .1em;
-		font-weight: bold;
-		text-transform: uppercase;
+		// font-weight: bold;
+		// text-transform: uppercase;
 		font-size: 90%;
-		padding: 0 12px;
-
 	}
 
 	.find-info {

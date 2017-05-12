@@ -1,15 +1,22 @@
 <section class="new-find">
 	
-	<h1>Enter a new find</h1>
+	<h2>Enter a new find</h2>
 
 	<form data-ng-submit="submit()" novalidate name="form.newFindForm">
-
+		
 		<div class="set" data-ng-repeat="set in questions" data-ng-class="{'open': set.expandedDisplay}">
-			<h2 data-ng-click="set.expandedDisplay =! set.expandedDisplay">
+
+			<h3 data-ng-click="set.expandedDisplay =! set.expandedDisplay">
+
 				<i data-ng-if="!set.expandedDisplay" class="fa fa-plus" aria-hidden="true"></i>
 				<i data-ng-if="set.expandedDisplay" class="fa fa-minus" aria-hidden="true"></i>
-				{{ set.sectionTitle }}</h2>
-			<div data-ng-if="set.expandedDisplay" data-ng-repeat="question in set.questions" data-new-find-question="question"></div>
+				{{ set.sectionTitle }}</h3>
+
+			<div data-ng-if="set.expandedDisplay"
+				data-ng-repeat="question in set.questions"
+				data-new-find-question="question"
+				data-form-data="formData"></div>
+
 		</div>
 
 		<div class="form-actions">

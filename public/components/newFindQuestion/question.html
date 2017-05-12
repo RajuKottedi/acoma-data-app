@@ -10,19 +10,19 @@
 			data-ng-if="question.inputType === 'text' || !question.inputType"
 			type="text"
 			data-ng-disabled="question.disabled"
-			data-model="formData[question.id]"
+			data-ng-model="formData[question.id]"
 			data-ng-attr-id="{{ question.id }}"
 			data-ng-attr-placeholder="{{ question.placeholder }}">
-
+		
 		<!-- II. type is select -->
 		<select
 			data-ng-if="question.inputType === 'select'"
 			data-ng-disabled="question.disabled"
 			data-ng-attr-id="{{ question.id }}"
-			data-ng-model="formData[question.id].options"
-			data-ng-options="question as question.label for question in question.options track by question.id">
-
-				<option value="question.value" selected="selected">Choose option</option>
+			data-ng-model="formData[question.id]"
+			data-ng-options="question.label for question in question.options">
+			<!-- ?? AS <inputLabel> FOR <option> IN <array> track by <question.id>-->
+				<option value="" selected="true">-- Choose option --</option>
 			
 			</select>
 

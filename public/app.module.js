@@ -7,6 +7,7 @@ function config ($urlRouterProvider, $stateProvider) {
 	//Dashboard
 	$stateProvider.state('dashboard', {
 		url: '/dashboard',
+		params: { alert: null },
 		views: {
 			'body@': {
 				templateUrl: 'layout/default.tmpl.html',

@@ -16,5 +16,17 @@ Info
 3. lat lng
 
 - TODO
-- take out search box :(
-- dashboard local storage
+- rim radius vs diameter?
+- prov, spec, and ID
+- put most up to date version on site
+- id: datetimelatlng
+- keep in the same order
+- appCache to download files
+- show # of items successfully synced
+
+Issues
+- because unique ID is a timestamp, you can save multiple times and it adds a new record instead of rewriting,
+  to fix this, routing to hope and showing new entry
+- better ID, seems very long...
+- sync button is disabled unless there are records to sync
+-

@@ -14,7 +14,7 @@
 	"sectionTitle": "Variables measured on all body sherds",
 	"expandedDisplay": true,
 	"questions": [{
-		"id": null,
+		"id": "clay",
 		"label": "Clay Color/Ware",
 		"description": "A sub-sample from each site will be coded by me using Munsell charts.  This variable is notincluded in the quantitative analyses.",
 		"inputType": "select",
@@ -29,7 +29,7 @@
 			{ "label": "99 - other, specify in notes", "value": 99 }
 		]
 	}, {
-		"id": null,
+		"id": "vesselPortion",
 		"label": "Vessel Portion",
 		"description": "",
 		"inputType": "select",
@@ -47,7 +47,7 @@
 			{ "label": "99 - other, specify in notes", "value": 99 }
 		]
 	}, {
-		"id": null,
+		"id": "type",
 		"label": "Type (primary treatment)",
 		"description": "A majority of sherds will fit into one of these categories.  If a sherd does not fit into any of these categories, code it as “other” and write a description in the notes field.  These variables arenot included in the quantitative analyses.",
 		"inputType": "select",
@@ -66,7 +66,7 @@
 			{ "label": "99 - other, specify in notes", "value": 99 }
 		]
 	}, {
-		"id": null,
+		"id": "typeIndent",
 		"label": "Type of indentations",
 		"description": "This category only applies to indented, zoned, and patterned corrugated sherds.",
 		"inputType": "select",
@@ -80,7 +80,7 @@
 			{ "label": "99 - other, specify in notes", "value": 99 }
 		]
 	}, {
-		"id": null,
+		"id": "dirIndent",
 		"label": "Direction of indentations",
 		"description": "This variable relates to the direction of the indentations in relation to the coils used to form thevessel.  As with the variable above, this is only measured on indented, zoned, and patterned corrugated sherds.  See example sherds.",
 		"inputType": "select",
@@ -94,7 +94,7 @@
 			{ "label": "3 – oblique – the indentation is between parallel/perpendicular", "value": 3 }
 		]
 	}, {
-		"id": null,
+		"id": "indentAlign",
 		"label": "Indentation Alignment",
 		"description": "This variable relates to whether or not indentations are aligned between coils. This variable is only measured on indented, zoned, and patterned corrugated sherds.",
 		"inputType": "select",
@@ -108,7 +108,7 @@
 			{ "label": "3 – diagonally aligned – indentation clearly diagonally aligned", "value": 3 }
 		]
 	}, {
-		"id": null,
+		"id": "surfElab",
 		"label": "Type of surface elaborations",
 		"description": "This variable refers secondary surface elaborations that are applied after the vessel is formed. The list below includes most of the secondary surface treatments that you are likely to encounter. If you encounter a surface treatment not included here, code this sherd as “other” and write a description in the notes field.",
 		"inputType": "select",
@@ -123,7 +123,7 @@
 			{ "label": "99 – other/multiple – specify in the notes", "value": 99 }
 		]
 	}, {
-		"id": null,
+		"id": "vessForm",
 		"label": "Vessel form",
 		"description": "The type of vessel. Use one of the following categories. If a sherd does not fit any of these categories, code it as “other” and describe it in the notes field.",
 		"inputType": "select",
@@ -142,7 +142,7 @@
 			{ "label": "99 – other - specify in the notes", "value": 99 }
 		]
 	}, {
-		"id": null,
+		"id": "smudging",
 		"label": "Presence/absence of smudging",
 		"description": "This variable refers to the presence or absence of smudging. Smudging is most common on the interior surface of bowls. It characterized as a black, waxy feeling, and reflective surface that is usually highly polished.",
 		"inputType": "select",
@@ -155,7 +155,7 @@
 			{ "label": "2 – smudging present", "value": 2 }
 		]
 	}, {
-		"id": null,
+		"id": "intSurfTr",
 		"label": "Interior surface treatment",
 		"description": "",
 		"inputType": "select",
@@ -171,7 +171,7 @@
 			{ "label": "99 – other – specify in notes", "value": 99 }
 		]
 	}, {
-		"id": null,
+		"id": "sooting",
 		"label": "Sooting",
 		"description": "This variable refers to the presence or absence of sooting, defined as a dark carbon residue.",
 		"inputType": "select",
@@ -187,7 +187,7 @@
 			{ "label": "5 – no sooting present", "value": 5 }
 		]
 	}, {
-		"id": null,
+		"id": "vessWalThi",
 		"label": "Vessel wall thickness",
 		"description": "This variable refers to the thickness of the thickest portion of the sherd. This is measured using the digital calipers. Do not measure this variable on rim or base sherds. Average of 3 measurements.",
 		"inputType": "number",
@@ -197,7 +197,7 @@
 		"options": [],
 		"unit": "cm"
 	}, {
-		"id": null,
+		"id": "wIndent",
 		"label": "Width of indentations",
 		"description": "This variable refers to the width of indentations at the widest point. This is measured using the digital calipers. Three indentations are measured for each sherd which will later be averaged.",
 		"inputType": "avgNumber",
@@ -207,7 +207,7 @@
 		"options": [],
 		"unit": "cm"
 	}, {
-		"id": null,
+		"id": "depthInd",
 		"label": "Depth of indentations",
 		"description": "This variable refers to the difference between the deepest portion of an indentation and the top of the adjacent coil. Three indentations are measured which will later be averaged. This is measured using the digital depth gauge.",
 		"inputType": "avgNumber",
@@ -217,7 +217,7 @@
 		"options": [],
 		"unit": "cm"
 	}, {
-		"id": null,
+		"id": "coilW",
 		"label": "Coil width",
 		"description": "This variable provides an estimate of the average size of coils for each sherd. This is the average of three measures from coil juncture to coil juncture.",
 		"inputType": "avgNumber",
@@ -227,7 +227,7 @@
 		"options": [],
 		"unit": "cm"
 	}, {
-		"id": null,
+		"id": "numIdent",
 		"label": "Number of indentations per sq cm",
 		"description": "This variable refers to the number of indentations per square cm of vessel surface. This is measured by placing the 3x3 cm cardboard cutout over a sherd and recording the number of indentations that are fully visible. If measuring a zoned or patterned corrugated sherd, make sure that unindented portions of the vessel are not visible through the cardboard cutout.",
 		"inputType": "number",
@@ -237,7 +237,7 @@
 		"options": [],
 		"unit": "per sq cm"
 	},{
-		"id": null,
+		"id": "propCoil",
 		"label": "Proportion of obliterated coils",
 		"description": "This variable refers to the proportion of coils that are obliterated. Obliteration refers to the smoothing of coil junctures so that they are only visible through the indentations. This variable is measured by counting the total number of coils and obliterated coils visible.",
 		"inputType": "select",
@@ -255,7 +255,7 @@
 	"sectionTitle": "Only measured on rim sherds",
 	"expandedDisplay": false,
 	"questions": [{
-		"id": null,
+		"id": "rimRadius",
 		"label": "Rim radius",
 		"description": "This variable refers to the radius of the vessel opening. This is measured using the rim radius template chart.",
 		"inputType": "number",
@@ -265,7 +265,7 @@
 		"options": [],
 		"unit": "per sq cm"
 	}, {
-		"id": null,
+		"id": "distCoils",
 		"label": "Distance to coils",
 		"description": "This variable refers to the distance from the top of the rim to the first exposed coil. This is measured using a flexible rule.",
 		"inputType": "number",
@@ -275,7 +275,7 @@
 		"options": [],
 		"unit": "per sq cm"
 	}, {
-		"id": null,
+		"id": "rimForm",
 		"label": "Rim form",
 		"description": "This variable refers to the general form of the rim in cross-section. Draw rim on back of form.",
 		"inputType": "select",
@@ -291,22 +291,12 @@
 			{ "label": "5 – other - specify in notes and draw", "value": 5 }
 		],
 		"unit": "per sq cm"
-	}, {
-		"id": null,
-		"label": "Rim radius",
-		"description": "This variable refers to the radius of the vessel opening. This is measured using the rim radius template chart.",
-		"inputType": "number",
-		"disabled": false,
-		"value": "",
-		"placeholder": "",
-		"options": [],
-		"unit": "per sq cm"
 	}]
 }, {
 	"sectionTitle": "Only measured on basal sherds",
 	"expandedDisplay": false,
 	"questions": [{
-		"id": null,
+		"id": "dirCoils",
 		"label": "Direction of coils",
 		"description": "This variable refers to the direction that coils when looking at the bottom of the vessel from the exterior.",
 		"inputType": "select",
@@ -324,7 +314,7 @@
 	"sectionTitle": "Any other observations",
 	"expandedDisplay": true,
 	"questions": [{
-		"id": null,
+		"id": "other",
 		"label": "Notes",
 		"inputType": "textarea",
 		"disabled": false,

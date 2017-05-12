@@ -4,7 +4,7 @@ angular.module('app')
 
 		function ($scope, $state, $timeout, $http) {
 
-			var count,
+			var count;
 
 			initialize = function () {
 
@@ -12,8 +12,9 @@ angular.module('app')
 
 					navigator.geolocation.getCurrentPosition(function (position) {
 
-						$scope.formData.lat = position.coords.latitude;
-						$scope.formData.lng = position.coords.longitude;
+						$scope.formData.location = {};
+						$scope.formData.location.lat = position && position.coords && position.coords.latitude;
+						$scope.formData.location.lng = position && position.coords && position.coords.longitude;
 
 					}, function (err) {
 						console.log(err);
@@ -49,19 +50,22 @@ angular.module('app')
 
 			$scope.submit = function () {
 
-				var d = new Date(),
-					stringCopy = '';
+				var stringCopy = '',
+					findId = '',
+					successAlert = {
+						display: true,
+						statusText: 'This has been saved to localStorage.',
+						type: 'success'
+					}
 
-				$scope.formData.dateCollected = d;
-
-				$scope.findId = $scope.formData.SID + '' + $scope.formData.dateCollected;
-
+				$scope.formData.dateCollected = Date.now();
+				$scope.formData.findId = $scope.formData.dateCollected + '_' + $scope.formData.location.lat + '_' + $scope.formData.location.lng;
 				$scope.transmitting = true;
 
 				try {
 					stringCopy = JSON.stringify($scope.formData);
 				} catch (err) {
-					console.debug();
+
 					$scope.saveAlert = {
 						display: true,
 						message: err || 'Could not stringify this data',
@@ -73,40 +77,11 @@ angular.module('app')
 					return;
 				}
 
-				localStorage.setItem($scope.findId, stringCopy);
+				localStorage[$scope.formData.findId] = stringCopy;
 
-					$scope.transmitting = false;
+				$scope.transmitting = false;
 
-					$scope.saveAlert = {
-						display: true,
-						message: 'This has been saved to localStorage.',
-						type: 'success'
-					};
-
-
-
-				//todo - this should be moved to sync!
-				// $http.post('/api/finds', $scope.formData).then(function (res) {
-										
-				// 	$scope.transmitting = false;
-					
-				// 	$scope.saveAlert = {
-				// 		display: true,
-				// 		message: 'Successfully saved at ' + d.toTimeString(),
-				// 		type: 'success'
-				// 	};
-						
-				// }, function (err) {
-
-				// 	$scope.transmitting = false;
-
-				// 	$scope.saveAlert = {
-				// 		display: true,
-				// 		message: err.statusText,
-				// 		type: 'error'
-				// 	};
-
-				// });
+				$state.go('dashboard', { alert: successAlert });
 
 			};
 
