@@ -84,9 +84,9 @@ apiRouter.post('/finds', function (req, res) {
 
 	//SET to be insert into DB
 	//This is formatting into database accepted field names
-	var convertJsDateToSqlDate = function (date) {
-		console.log('and the date is...', date)
-		return date.toISOString().slice(0, 19).replace('T', ' ');
+	var convertJsDateToSqlDate = function (d) {
+		console.log('and the date is...', d)
+		return new Date(d).toISOString().slice(0, 19).replace('T', ' ');
 	};
 
 	var find = {
