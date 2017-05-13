@@ -131,8 +131,22 @@ apiRouter.post('/finds', function (req, res) {
 		connection.query("INSERT INTO tbl_all_finds SET ?", find, function (err, rows) {
 			console.log('errorhere', err);
 			console.log('rows', rows)
+
 			connection.release();
 			return res.status(200).json(rows);
+		});
+
+		connection.query("INSERT INTO tbl_all_finds SET ?", find, function (err, rows) {
+			
+			console.log('---------------------', err, '-----------------------');
+			connection.release();
+
+			if (err) {
+				return res.status(400).json(err);
+			}
+
+			return res.status(200).json(rows);
+
 		});
 
 		connection.on('error', function () {
