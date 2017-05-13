@@ -28,6 +28,15 @@ section.dashboard {
 		margin-right: 0;
 		width: 25%;
 	}
+
+	@media screen and (max-width: 647px) {
+		width: 100%;
+		display: block;
+
+		&:nth-child(4n) {
+		width: 100%;
+	}
+	}
 }
 
 .dashboard .no-finds {
@@ -37,6 +46,10 @@ section.dashboard {
 	p {
 		line-height: 150px;
 		text-align: center;
+	}
+
+	@media screen and (max-width: 647px) {
+		margin-left: 0;
 	}
 }
 

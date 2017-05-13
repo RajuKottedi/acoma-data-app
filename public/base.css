@@ -153,6 +153,17 @@ html {
 .row .col-2 {
   flex: 2;
 }
+@media screen and (max-width: 647px) {
+  .row {
+    display: block;
+  }
+  .row .col-1,
+  .row .col-2 {
+    display: block;
+    width: 100%;
+    margin-bottom: 6px;
+  }
+}
 body {
   font-family: 'Open Sans', sans-serif;
   color: #4A4949;
@@ -287,7 +298,9 @@ header h1 {
   display: inline-block;
 }
 header button.btn-sync {
-  height: 100%;
+  position: absolute;
+  right: 12px;
+  height: 50px;
   background: #17475C;
   color: #ADBAC0;
 }
@@ -305,16 +318,17 @@ section.alert-banner {
   padding: 12px;
   background: #4D4D4D;
   color: #eee;
-  border-bottom: 1px solid #580000;
 }
 section.alert-banner > span {
   font-size: 87.5%;
 }
 .alert-banner.error {
   background: darkred;
+  border-bottom: 1px solid #580000;
 }
 .alert-banner.success {
   background: #49A949;
+  border-bottom: 1px solid #3a853a;
 }
 header.child {
   height: 150px;
@@ -367,6 +381,15 @@ section.dashboard {
   margin-right: 0;
   width: 25%;
 }
+@media screen and (max-width: 647px) {
+  .dashboard > div {
+    width: 100%;
+    display: block;
+  }
+  .dashboard > div:nth-child(4n) {
+    width: 100%;
+  }
+}
 .dashboard .no-finds {
   flex: 2;
   margin-left: 12px;
@@ -374,6 +397,11 @@ section.dashboard {
 .dashboard .no-finds p {
   line-height: 150px;
   text-align: center;
+}
+@media screen and (max-width: 647px) {
+  .dashboard .no-finds {
+    margin-left: 0;
+  }
 }
 .dashboard .add-find {
   display: flex;
@@ -435,6 +463,11 @@ section.dashboard {
 }
 .new-find .set input[type="number"] {
   width: 25%;
+}
+@media screen and (max-width: 627px) {
+  .new-find .set input[type="number"] {
+    width: 50%;
+  }
 }
 .new-find .set textarea {
   height: 200px;

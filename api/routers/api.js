@@ -84,10 +84,10 @@ apiRouter.post('/finds', function (req, res) {
 
 	//SET to be insert into DB
 	//This is formatting into database accepted field names
-	var convertJsDateToSqlDate = function (d) {
-		console.log('and the date is...', d)
-		return new Date(d).toISOString().slice(0, 19).replace('T', ' ');
-	};
+	// var convertJsDateToSqlDate = function (d) {
+	// 	console.log('and the date is...', d)
+	// 	return new Date(d).toISOString().slice(0, 19).replace('T', ' ');
+	// };
 
 	var find = {
 
@@ -112,8 +112,8 @@ apiRouter.post('/finds', function (req, res) {
 		"Dist to coils": req.body.distCoils,
 		"Rim Form": req.body.rimForm,
 		"Coil Direc": req.body.dirCoils,
-		"Date": convertJsDateToSqlDate(req.body.dateCollected),
-		"Notes": req.body.other
+		"Notes": req.body.other,
+		"dateCollected": req.body.dateCollected
 	};
 
 	//if not all the required params exist, throw error

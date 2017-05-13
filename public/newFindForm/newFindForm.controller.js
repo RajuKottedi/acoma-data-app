@@ -51,16 +51,15 @@ angular.module('app')
 			$scope.submit = function () {
 
 				var stringCopy = '',
-					findId = '',
 					successAlert = {
 						display: true,
 						statusText: 'This has been saved to localStorage.',
 						type: 'success'
-					}
+					};
 
-				$scope.formData.dateCollected = new Date();
+				$scope.formData.dateCollected = Date.now();
 				
-				//$scope.formData.findId = $scope.formData.dateCollected + '_' + $scope.formData.location.lat + '_' + $scope.formData.location.lng;
+				// $scope.formData.findId = $scope.formData.dateCollected + '_' + $scope.formData.location.lat + '_' + $scope.formData.location.lng;
 				$scope.transmitting = true;
 
 				try {
@@ -78,7 +77,7 @@ angular.module('app')
 					return;
 				}
 
-				localStorage[$scope.formData.findId] = stringCopy;
+				localStorage[$scope.formData.dateCollected] = stringCopy;
 
 				$scope.transmitting = false;
 
@@ -93,6 +92,6 @@ angular.module('app')
 				$state.go('dashboard');
 			};
 
-			initialize();
+			//initialize();
 		}
 	]);

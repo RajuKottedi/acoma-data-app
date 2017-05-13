@@ -1,4 +1,7 @@
 CACHE MANIFEST
+# Version 1.0, 5/13/2017
+
+CACHE:
 index.html
 base.css
 app.module.js

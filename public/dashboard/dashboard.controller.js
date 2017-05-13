@@ -55,6 +55,12 @@ angular.module('app')
 
 			$scope.sync = function () {
 
+				var successAlert = {
+					display: true,
+					statusText: 'This has been synced to the server.',
+					type: 'success'
+				};
+
 				$scope.alerts = [];
 
 				if (navigator && navigator.onLine) {
@@ -66,12 +72,9 @@ angular.module('app')
 							method: 'POST',
 							data: find
 						}).then(function (res) {
+							$scope.alerts.push(successAlert);
 
-							alertTmpl = res && res.data || {};
-							alertTmpl.type = 'success';
-							$scope.alerts.push(alertTmpl);
-
-							localStorage.removeItem(find.findId);
+							localStorage.removeItem(find.dateCollected);
 							$scope.previousFinds.splice(find);
 						}, function (err) {
 
@@ -82,30 +85,6 @@ angular.module('app')
 							setErrorTimer();
 						});
 					});
-
-					// for (var i=0;i<$scope.previousFinds.length;i++) {
-
-					// 	$http({
-					// 		url: '/api/finds',
-					// 		method: 'POST',
-					// 		data: $scope.previousFinds[i] 
-					// 	}).then(function (res) {
-
-					// 		alertTmpl = res && res.data || {};
-					// 		alertTmpl.type = 'success';
-					// 		$scope.alerts.push(alertTmpl);
-
-					// 		localStorage.removeItem($scope.previousFinds[i].findId);
-					// 		$scope.previousFinds.splice(i,1);
-					// 	}, function (err) {
-
-					// 		alertTmpl = err && err.data || {};
-					// 		alertTmpl.type = 'error';
-					// 		$scope.alerts.push(alertTmpl);
-
-					// 		setErrorTimer();
-					// 	});
-					// }
 
 
 				} else {

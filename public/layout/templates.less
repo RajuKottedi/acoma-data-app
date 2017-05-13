@@ -8,6 +8,15 @@ html { box-sizing: border-box; }
 	display: flex;
 	.col-1 { flex: 1; }
 	.col-2 { flex: 2; }
+
+	@media screen and (max-width: 647px) {
+		display: block;
+		.col-1, .col-2 {
+			display: block;
+			width: 100%;
+			margin-bottom: @defaultMargin * .5;
+		}
+	}
 }
 
 body {
@@ -141,7 +150,9 @@ header {
 	}
 
 	button.btn-sync {
-		height: 100%;
+		position: absolute;
+		right: 12px;
+		height: 50px;
 		background: @submarine-dark;
 		color: @submarine-white;
 	}
@@ -163,7 +174,6 @@ section.alert-banner {
 	padding: 12px;
 	background: @niceGray;
 	color: #eee;
-	border-bottom: 1px solid darken(@failure-red, 10%);
 
 	> span {
 		font-size: 87.5%;
@@ -172,10 +182,12 @@ section.alert-banner {
 
 .alert-banner.error {
 	background: @failure-red;
+	border-bottom: 1px solid darken(@failure-red, 10%);
 }
 
 .alert-banner.success {
 	background: @success-green;
+	border-bottom: 1px solid darken(@success-green, 10%);
 }
 
 header.child {
