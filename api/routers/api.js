@@ -83,14 +83,37 @@ apiRouter.get('/finds', function (req, res) {
 apiRouter.post('/finds', function (req, res) {
 
 	//SET to be insert into DB
+	//This is formatting into database accepted field names
 	var find = {
-		find_id: req.body.findId || null,
-		SID: req.body.SID || null,
-		date_collected: req.body.dateCollected
+
+		//identifying info
+		"UNQID": req.body.findId,
+		"Site": req.body.SID,
+		"Clay": req.body.clay,
+		"Type": req.body.type,
+		"Indt Type": req.body.typeIndent,
+		"Direc": req.body.dirIndent,
+		"Indt Algn": req.body.indentAlign,
+		"Elab": req.body.elab,
+		"Form": req.body.rimForm,
+		"Smg": req.body.smudging,
+		"Int Sur": req.body.intSurf,
+		"Soot": req.body.sooting,
+		"Thick": req.body.thickness,
+		"IndWidth AVG": req.body.widthIdnAvg,
+		"Depth AVG": req.body.depthIdnAvg,
+		"Coils AVG": req.body.coilWidthAvg,
+		"IndPer Ct": req.body.indPerCt,
+		"Oblit P": req.body.propOblCoils,
+		"Dist to coils": req.body.distCoils,
+		"Rim Form": req.body.rimForm,
+		"Coil Direc": req.body.dirCoils,
+		"Date": req.body.dateCollected,
+		"Notes": req.body.other
 	};
 
 	//if not all the required params exist, throw error
-	if (!find.find_id || !find.SID) {
+	if (!find.UNQID || !find.Site) {
 		return res.status(400).json(BAD_REQUEST);
 	}
 
@@ -102,11 +125,8 @@ apiRouter.post('/finds', function (req, res) {
 		}
 
 		connection.query("INSERT INTO tbl_all_finds SET ?", find, function (err, rows) {
-			
 			connection.release();
-
 			return res.status(200).json(rows);
-
 		});
 
 		connection.on('error', function () {

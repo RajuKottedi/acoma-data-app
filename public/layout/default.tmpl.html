@@ -9,9 +9,11 @@
 </header>
 
 <section
+	data-ng-repeat="alert in alerts"
 	class="alert-banner"
 	data-ng-class="{'success': alert.type === 'success', 'error': alert.type === 'error' }"
-	data-ng-if="alert.message"><span>{{ alert.statusText }}</span>
+	data-ng-if="alert.statusText">
+	<span>{{ alert.statusText }}</span>
 </section>
 
 <article data-ui-view="main"></article>

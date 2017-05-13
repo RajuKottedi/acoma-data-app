@@ -8,8 +8,8 @@
 	</div>
 	
 	<!-- <span class="fa fa-angle-right fa-2x" aria-hidden="true"></span> -->
-	<p><span class="find-lbl">Latitude</span><br><strong>{{ find.location.lat }}</strong></p>
-	<p><span class="find-lbl">Longitude</span><br><strong>{{ find.location.lng }}</strong></p>
+	<p data-ng-if="find.location.lat"><span class="find-lbl">Latitude</span><br><strong>{{ find.location.lat }}</strong></p>
+	<p data-ng-if="find.location.lng"><span class="find-lbl">Longitude</span><br><strong>{{ find.location.lng }}</strong></p>
 	<p><span class="find-lbl">Timestamp</span><br><strong>{{ find.dateCollected }}</strong></p>
 	
 	<!-- to do - add in if we want viewing/editing -->

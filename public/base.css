@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'OpenSans';
+  src: url('resources/fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans';
+  src: url('resources/fonts/Open_Sans/OpenSans-Semibold.ttf') format('truetype');
+  font-weight: 700;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -296,6 +305,7 @@ section.alert-banner {
   padding: 12px;
   background: #4D4D4D;
   color: #eee;
+  border-bottom: 1px solid #580000;
 }
 section.alert-banner > span {
   font-size: 87.5%;

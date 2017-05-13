@@ -108,7 +108,7 @@
 			{ "label": "3 – diagonally aligned – indentation clearly diagonally aligned", "value": 3 }
 		]
 	}, {
-		"id": "surfElab",
+		"id": "elab",
 		"label": "Type of surface elaborations",
 		"description": "This variable refers secondary surface elaborations that are applied after the vessel is formed. The list below includes most of the secondary surface treatments that you are likely to encounter. If you encounter a surface treatment not included here, code this sherd as “other” and write a description in the notes field.",
 		"inputType": "select",
@@ -155,7 +155,7 @@
 			{ "label": "2 – smudging present", "value": 2 }
 		]
 	}, {
-		"id": "intSurfTr",
+		"id": "intSurf",
 		"label": "Interior surface treatment",
 		"description": "",
 		"inputType": "select",
@@ -187,7 +187,7 @@
 			{ "label": "5 – no sooting present", "value": 5 }
 		]
 	}, {
-		"id": "vessWalThi",
+		"id": "thickness",
 		"label": "Vessel wall thickness",
 		"description": "This variable refers to the thickness of the thickest portion of the sherd. This is measured using the digital calipers. Do not measure this variable on rim or base sherds. Average of 3 measurements.",
 		"inputType": "number",
@@ -197,7 +197,7 @@
 		"options": [],
 		"unit": "cm"
 	}, {
-		"id": "wIndent",
+		"id": "widthIndAvg",
 		"label": "Width of indentations",
 		"description": "This variable refers to the width of indentations at the widest point. This is measured using the digital calipers. Three indentations are measured for each sherd which will later be averaged.",
 		"inputType": "avgNumber",
@@ -207,7 +207,7 @@
 		"options": [],
 		"unit": "cm"
 	}, {
-		"id": "depthInd",
+		"id": "depthIndAvg",
 		"label": "Depth of indentations",
 		"description": "This variable refers to the difference between the deepest portion of an indentation and the top of the adjacent coil. Three indentations are measured which will later be averaged. This is measured using the digital depth gauge.",
 		"inputType": "avgNumber",
@@ -217,7 +217,7 @@
 		"options": [],
 		"unit": "cm"
 	}, {
-		"id": "coilW",
+		"id": "coilWidthAvg",
 		"label": "Coil width",
 		"description": "This variable provides an estimate of the average size of coils for each sherd. This is the average of three measures from coil juncture to coil juncture.",
 		"inputType": "avgNumber",
@@ -227,7 +227,7 @@
 		"options": [],
 		"unit": "cm"
 	}, {
-		"id": "numIdent",
+		"id": "indPerCt",
 		"label": "Number of indentations per sq cm",
 		"description": "This variable refers to the number of indentations per square cm of vessel surface. This is measured by placing the 3x3 cm cardboard cutout over a sherd and recording the number of indentations that are fully visible. If measuring a zoned or patterned corrugated sherd, make sure that unindented portions of the vessel are not visible through the cardboard cutout.",
 		"inputType": "number",
@@ -237,7 +237,7 @@
 		"options": [],
 		"unit": "per sq cm"
 	},{
-		"id": "propCoil",
+		"id": "propOblCoils",
 		"label": "Proportion of obliterated coils",
 		"description": "This variable refers to the proportion of coils that are obliterated. Obliteration refers to the smoothing of coil junctures so that they are only visible through the indentations. This variable is measured by counting the total number of coils and obliterated coils visible.",
 		"inputType": "select",

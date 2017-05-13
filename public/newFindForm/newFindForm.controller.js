@@ -59,7 +59,8 @@ angular.module('app')
 					}
 
 				$scope.formData.dateCollected = new Date();
-				$scope.formData.findId = $scope.formData.dateCollected + '_' + $scope.formData.location.lat + '_' + $scope.formData.location.lng;
+				
+				//$scope.formData.findId = $scope.formData.dateCollected + '_' + $scope.formData.location.lat + '_' + $scope.formData.location.lng;
 				$scope.transmitting = true;
 
 				try {
