@@ -84,10 +84,14 @@ apiRouter.post('/finds', function (req, res) {
 
 	//SET to be insert into DB
 	//This is formatting into database accepted field names
+	var convertJsDateToSqlDate = function (date) {
+		console.log('and the date is...', date)
+		return date.toISOString().slice(0, 19).replace('T', ' ');
+	};
+
 	var find = {
 
 		//identifying info
-		"UNQID": req.body.findId,
 		"Site": req.body.SID,
 		"Clay": req.body.clay,
 		"Type": req.body.type,
@@ -97,7 +101,7 @@ apiRouter.post('/finds', function (req, res) {
 		"Elab": req.body.elab,
 		"Form": req.body.rimForm,
 		"Smg": req.body.smudging,
-		"Int Sur": req.body.intSurf,
+		"Int Surf": req.body.intSurf,
 		"Soot": req.body.sooting,
 		"Thick": req.body.thickness,
 		"IndWidth AVG": req.body.widthIdnAvg,
@@ -108,12 +112,12 @@ apiRouter.post('/finds', function (req, res) {
 		"Dist to coils": req.body.distCoils,
 		"Rim Form": req.body.rimForm,
 		"Coil Direc": req.body.dirCoils,
-		"Date": req.body.dateCollected,
+		"Date": convertJsDateToSqlDate(req.body.dateCollected),
 		"Notes": req.body.other
 	};
 
 	//if not all the required params exist, throw error
-	if (!find.UNQID || !find.Site) {
+	if (!find.Site) {
 		return res.status(400).json(BAD_REQUEST);
 	}
 
@@ -125,6 +129,8 @@ apiRouter.post('/finds', function (req, res) {
 		}
 
 		connection.query("INSERT INTO tbl_all_finds SET ?", find, function (err, rows) {
+			console.log('errorhere', err);
+			console.log('rows', rows)
 			connection.release();
 			return res.status(200).json(rows);
 		});

@@ -4,7 +4,7 @@ angular.module('app')
 		function ($scope, $state, $http, $timeout) {
 
 			//fetches all of the finds from localStorage
-			var alertTmpl = $state.params.alert || {},
+			var alertTmpl = {},
 				fetchAll = function () {
 				
 					var finds = [];
@@ -35,6 +35,10 @@ angular.module('app')
 
 			$scope.alerts = [];
 
+			if ($state.params.alert) {
+				$scope.alerts.push($state.params.alert);
+			}
+
 			$scope.heading = 'Cibola Ceramic Analysis';
 
 			$scope.query = { value: '' };
@@ -55,19 +59,20 @@ angular.module('app')
 
 				if (navigator && navigator.onLine) {
 
-					for (var i=0;i<$scope.previousFinds.length;i++) {
+					$scope.previousFinds.forEach(function (find) {
 
 						$http({
 							url: '/api/finds',
 							method: 'POST',
-							data: $scope.previousFinds[i] 
+							data: find
 						}).then(function (res) {
 
 							alertTmpl = res && res.data || {};
 							alertTmpl.type = 'success';
 							$scope.alerts.push(alertTmpl);
 
-							$scope.previousFinds.splice(i,1);
+							localStorage.removeItem(find.findId);
+							$scope.previousFinds.splice(find);
 						}, function (err) {
 
 							alertTmpl = err && err.data || {};
@@ -76,7 +81,31 @@ angular.module('app')
 
 							setErrorTimer();
 						});
-					}
+					});
+
+					// for (var i=0;i<$scope.previousFinds.length;i++) {
+
+					// 	$http({
+					// 		url: '/api/finds',
+					// 		method: 'POST',
+					// 		data: $scope.previousFinds[i] 
+					// 	}).then(function (res) {
+
+					// 		alertTmpl = res && res.data || {};
+					// 		alertTmpl.type = 'success';
+					// 		$scope.alerts.push(alertTmpl);
+
+					// 		localStorage.removeItem($scope.previousFinds[i].findId);
+					// 		$scope.previousFinds.splice(i,1);
+					// 	}, function (err) {
+
+					// 		alertTmpl = err && err.data || {};
+					// 		alertTmpl.type = 'error';
+					// 		$scope.alerts.push(alertTmpl);
+
+					// 		setErrorTimer();
+					// 	});
+					// }
 
 
 				} else {
