@@ -22,6 +22,10 @@ vendor/angular/angular.min.js
 vendor/angular-ui-router/angular-ui-router.min.js
 newFindForm/newFindForm.controller.js
 newFindForm/new-find-form.html
+resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0
 resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0
+resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0
+resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0
+resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0
 resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css
 config/questions.json
