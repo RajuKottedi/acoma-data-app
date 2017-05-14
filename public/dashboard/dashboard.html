@@ -2,7 +2,7 @@
 	<div data-ng-click="goToNewFind()" class="add-find">
 		<i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
 	</div>
-	<div data-ng-repeat="find in finds = (previousFinds| filter:query.value)" data-find-summary="find"></div>
+	<div data-ng-repeat="find in finds = (previousFinds | filter:query.value) track by $index" data-find-summary="find"></div>
 	<div data-ng-show="!finds.length && previousFinds.length > 0" class="no-finds">
 		<p>No results found. <button data-ng-click="query.value = ''" class="btn-link"><strong>Clear search</strong></button> and try again.</p>
 	</div>

@@ -4,7 +4,7 @@ angular.module('app')
 
 		function ($scope, $state, $timeout, $http) {
 
-			var count;
+			var count,
 
 			initialize = function () {
 
@@ -20,6 +20,20 @@ angular.module('app')
 						console.log(err);
 					});
 				}
+			};
+
+			var formatFormData = function (fd) {
+
+				var obj = {};
+
+				for (var prop in fd) {
+					if (fd.hasOwnProperty(prop)) {
+						obj[prop] = fd[prop].value || fd[prop];
+					}
+				}
+
+				return obj;
+
 			};
 
 			$scope.heading = 'Back to Dashboard';
@@ -55,15 +69,16 @@ angular.module('app')
 						display: true,
 						statusText: 'This has been saved to localStorage.',
 						type: 'success'
-					};
+					},
+					formData = formatFormData($scope.formData);
 
-				$scope.formData.dateCollected = Date.now();
+				formData.dateCollected = Date.now();
 				
 				// $scope.formData.findId = $scope.formData.dateCollected + '_' + $scope.formData.location.lat + '_' + $scope.formData.location.lng;
 				$scope.transmitting = true;
 
 				try {
-					stringCopy = JSON.stringify($scope.formData);
+					stringCopy = JSON.stringify(formData);
 				} catch (err) {
 
 					$scope.saveAlert = {
@@ -73,11 +88,10 @@ angular.module('app')
 					};
 
 					$scope.transmitting = false;
-
 					return;
 				}
 
-				localStorage[$scope.formData.dateCollected] = stringCopy;
+				localStorage[formData.dateCollected] = stringCopy;
 
 				$scope.transmitting = false;
 
