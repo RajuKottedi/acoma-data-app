@@ -175,20 +175,45 @@ section.alert-banner {
 	padding: 12px;
 	background: @niceGray;
 	color: #eee;
+	position: relative;
 
 	> span {
 		font-size: 87.5%;
+	}
+
+	.fa-close {
+		position: absolute;
+	  right: 12px;
+	  top: 6px;
+	  padding: 6px 8px;
+	  border-radius: 16px;
 	}
 };
 
 .alert-banner.error {
 	background: @failure-red;
 	border-bottom: 1px solid darken(@failure-red, 10%);
+	
+	.fa-close {
+		background: darken(@failure-red, 10%);
+		
+		&:hover {
+	  	background: darken(@failure-red, 20%);
+	  }
+	}
 }
 
 .alert-banner.success {
 	background: @success-green;
 	border-bottom: 1px solid darken(@success-green, 10%);
+
+	.fa-close {
+		background: darken(@success-green, 10%);
+
+		&:hover {
+			background: darken(@success-green, 15%);
+		}
+	}
 }
 
 header.child {

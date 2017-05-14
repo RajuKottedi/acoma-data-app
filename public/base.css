@@ -319,17 +319,37 @@ section.alert-banner {
   padding: 12px;
   background: #4D4D4D;
   color: #eee;
+  position: relative;
 }
 section.alert-banner > span {
   font-size: 87.5%;
+}
+section.alert-banner .fa-close {
+  position: absolute;
+  right: 12px;
+  top: 6px;
+  padding: 6px 8px;
+  border-radius: 16px;
 }
 .alert-banner.error {
   background: darkred;
   border-bottom: 1px solid #580000;
 }
+.alert-banner.error .fa-close {
+  background: #580000;
+}
+.alert-banner.error .fa-close:hover {
+  background: #250000;
+}
 .alert-banner.success {
   background: #49A949;
   border-bottom: 1px solid #3a853a;
+}
+.alert-banner.success .fa-close {
+  background: #3a853a;
+}
+.alert-banner.success .fa-close:hover {
+  background: #327432;
 }
 header.child {
   height: 150px;

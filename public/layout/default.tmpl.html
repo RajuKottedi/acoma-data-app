@@ -9,11 +9,12 @@
 </header>
 
 <section
-	data-ng-repeat="alert in alerts"
+	data-ng-repeat="alert in alerts | orderBy:'statusText' track by $index"
+	data-ng-if="alert.statusText !== alerts[$index-1].statusText && alert.display"
 	class="alert-banner"
 	data-ng-class="{'success': alert.type === 'success', 'error': alert.type === 'error' }"
 	data-ng-if="alert.statusText">
-	<span>{{ alert.statusText }}</span>
+	<span>{{ alert.statusText }}</span><span data-ng-click="alert.display=false" class="fa fa-close"></span></span>
 </section>
 
 <article data-ui-view="main"></article>

@@ -65,21 +65,26 @@ angular.module('app')
 
 				if (navigator && navigator.onLine) {
 
-					$scope.previousFinds.forEach(function (find) {
+					$scope.previousFinds.forEach(function (find, idx) {
+
+						console.log(find.dateCollected);
 
 						$http({
 							url: '/api/finds',
 							method: 'POST',
 							data: find
 						}).then(function (res) {
+							console.log('success');
 							$scope.alerts.push(successAlert);
 
-							localStorage.removeItem(find.dateCollected);
-							$scope.previousFinds.splice(find);
+							localStorage.removeItem(find.dateCollected.toString());
+							$scope.previousFinds.splice(idx);
 						}, function (err) {
 
+							console.log('fail');
 							alertTmpl = err && err.data || {};
 							alertTmpl.type = 'error';
+							alertTmpl.display = true;
 							$scope.alerts.push(alertTmpl);
 
 							setErrorTimer();
