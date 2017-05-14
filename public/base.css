@@ -167,6 +167,7 @@ html {
 body {
   font-family: 'Open Sans', sans-serif;
   color: #4A4949;
+  background: #eee;
 }
 h2 {
   font-size: 24px;
@@ -340,10 +341,6 @@ header.child {
 header.child i {
   display: inline-block;
   padding-right: 12px;
-}
-article {
-  background: #eee;
-  height: 100vh;
 }
 /*Default section*/
 article > section {
