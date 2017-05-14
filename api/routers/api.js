@@ -26,12 +26,12 @@ function handleDatabase (req, res) {
 
 		//if errors out on connection, return 
 		if (err) {
-			res.json(DB_CONNECT_ERR);
+			res.status(500).json(DB_CONNECT_ERR);
 			return;
 		}
 
 		connection.on('error', function () {
-			res.json(DB_CONNECT_ERR);
+			res.status(500).json(DB_CONNECT_ERR);
 			return;
 		});
 
