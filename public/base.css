@@ -489,6 +489,9 @@ section.dashboard {
 .new-find .set .avg-number input[type='number'] {
   width: 100%;
 }
+.new-find .set .avg-number .col-1 {
+  margin-right: 6px;
+}
 .new-find .form-actions {
   margin-top: 24px;
 }

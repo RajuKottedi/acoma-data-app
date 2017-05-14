@@ -91,7 +91,7 @@ angular.module('app')
 					return;
 				}
 
-				localStorage[formData.dateCollected] = stringCopy;
+				localStorage[$scope.formData.dateCollected] = stringCopy;
 
 				$scope.transmitting = false;
 

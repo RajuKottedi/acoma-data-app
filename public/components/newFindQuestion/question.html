@@ -62,13 +62,15 @@
 			</div>
 
 			<div class="col-1">
+			<!-- data-ng-value="formatAverage(val1, val2, val3)" -->
+
 				<input
-					data-ng-value="formatAverage(val1, val2, val3)"
 					type="number"
 					placeholder="0.0"
 					disabled="disabled"
 					data-ng-model="formData[question.id]"> <span class="unit" data-ng-if="question.unit">{{ question.unit }}</span>
 			</div>
+			{{ formData[question.id] }}
 
 		</div>
 
