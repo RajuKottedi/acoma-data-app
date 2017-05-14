@@ -124,7 +124,7 @@ apiRouter.post('/finds', function (req, res) {
 	pool.getConnection(function (err, connection) {
 
 		if (err) {
-			res.json(DB_CONNECT_ERR);
+			res.status(500).json(DB_CONNECT_ERR);
 			return;
 		}
 
