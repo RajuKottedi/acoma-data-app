@@ -10,7 +10,7 @@
 
 <section
 	data-ng-repeat="alert in alerts | orderBy:'statusText' track by $index"
-	data-ng-if="alert.statusText !== alerts[$index-1].statusText && alert.display"
+	data-ng-if="(alerts.length > 1 && alert.statusText !== alerts[$index-1].statusText && alert.display) || (alerts.length === 1 && alert.display)"
 	class="alert-banner"
 	data-ng-class="{'success': alert.type === 'success', 'error': alert.type === 'error' }"
 	data-ng-if="alert.statusText">

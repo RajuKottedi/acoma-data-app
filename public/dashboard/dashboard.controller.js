@@ -3,35 +3,37 @@ angular.module('app')
 	.controller('dashboard.controller', ['$scope', '$state', '$http', '$timeout',
 		function ($scope, $state, $http, $timeout) {
 
-			//fetches all of the finds from localStorage
-			var alertTmpl = {},
-				fetchAll = function () {
+			var fetchAll = function () {
 				
-					var finds = [];
+				var finds = [];
 
-					if (localStorage.length === 0) {
-						return [];
+				if (localStorage.length === 0) {
+					return [];
+				}
+
+				for (var i=0;i<localStorage.length;i++) {
+					
+					try {
+						finds.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+					} catch (err) {
+						console.log(err);
 					}
 
-					for (var i=0;i<localStorage.length;i++) {
-						
-						try {
-							finds.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
-						} catch (err) {
-							console.log(err);
-						}
+				}
 
-					}
+				return finds;
 
-					return finds;
+			};
 
-				},
+			var setErrorTimer = function (idx) {
+				$timeout(function () {
+					$scope.alerts[idx] = {};
+				}, 5000);
+			};
 
-				setErrorTimer = function () {
-					$timeout(function () {
-						$scope.errorMessage = '';
-					}, 5000);
-				};
+			var hasConnection = function () {
+				return navigator && navigator.onLine;
+			};
 
 			$scope.alerts = [];
 
@@ -63,7 +65,7 @@ angular.module('app')
 
 				$scope.alerts = [];
 
-				if (navigator && navigator.onLine) {
+				if (hasConnection()) {
 
 					$scope.previousFinds.forEach(function (find, idx) {
 
@@ -74,20 +76,24 @@ angular.module('app')
 							method: 'POST',
 							data: find
 						}).then(function (res) {
-							console.log('success');
+
 							$scope.alerts.push(successAlert);
 
 							localStorage.removeItem(find.dateCollected.toString());
 							$scope.previousFinds.splice(idx);
+
+							setErrorTimer($scope.alerts.length - 1);
+
 						}, function (err) {
 
-							console.log('fail');
 							alertTmpl = err && err.data || {};
 							alertTmpl.type = 'error';
 							alertTmpl.display = true;
+
 							$scope.alerts.push(alertTmpl);
 
-							setErrorTimer();
+							setErrorTimer($scope.alerts.length - 1);
+
 						});
 					});
 
