@@ -1,16 +1,18 @@
 'use strict';
 
+//Required libraries
 var express = require('express');
 var mysql = require('mysql');
 var env = process.env.NODE_ENV || 'development'; //for prod, this needs set as env variable
 var config = require('../config/config')[env];
 
-//Error handling
+//Generic errors
 var DB_CONNECT_ERR = { "status": 500, "statusText": "Error connecting to database." };
 var BAD_REQUEST = { "status": 400, "statusText": "The client created  bad request." };
-//var NOT_FOUND = { "status": 404, "statusText": "Resource not found." };
+var NOT_FOUND = { "status": 404, "statusText": "Resource not found." };
 
-//using pool instead of connect to allow multiple threads
+//Using pool instead of connect to allow multiple threads
+//this defines the DB connection
 var pool = mysql.createPool({
 	connectionLimit: 100, //important - no crashy
 	host     : config.database.host,
@@ -48,50 +50,16 @@ apiRouter.get('/', function(req, res) {
 	handleDatabase(req, res);
 });
 
-//GET all finds - Dashboard view
-apiRouter.get('/finds', function (req, res) {
-
-	pool.getConnection(function (err, connection) {
-
-		//if errors out on connection, return 
-		if (err) {
-			res.status(500).json(DB_CONNECT_ERR);
-			return;
-		}
-
-		connection.query("select * from vw_dashboard_finds", function (err, rows) {
-
-			connection.release();
-			
-			if (err) {
-				res.status(500).json(DB_CONNECT_ERR);
-				return;
-			}
-
-			return res.status(200).json(rows);
-
-		});
-
-		connection.on('error', function () {
-			res.json(DB_CONNECT_ERR);
-			return;
-		});
-
-	});
-});
-
+//This is the call that adds a new find row to the DB
 apiRouter.post('/finds', function (req, res) {
 
-	//SET to be insert into DB
-	//This is formatting into database accepted field names
-	// var convertJsDateToSqlDate = function (d) {
-	// 	console.log('and the date is...', d)
-	// 	return new Date(d).toISOString().slice(0, 19).replace('T', ' ');
-	// };
-
+	/*
+	 * This is the data to be posted into the DB.
+	 * The property name must match the field in the database.
+	 * The value must be in this format: req.body[question ID]
+	 * The question ID is defined in the question configuration JSON.
+	 */
 	var find = {
-
-		//identifying info
 		"Site": req.body.SID,
 		"Clay": req.body.clay,
 		"Type": req.body.type,
@@ -116,7 +84,11 @@ apiRouter.post('/finds', function (req, res) {
 		"dateCollected": req.body.dateCollected
 	};
 
-	//if not all the required params exist, throw error
+	/* 
+	 * If not all the required params exist, throw error
+	 * To add more required params, add another condition
+	 */
+
 	if (!find.Site) {
 		return res.status(400).json(BAD_REQUEST);
 	}
@@ -128,6 +100,10 @@ apiRouter.post('/finds', function (req, res) {
 			return;
 		}
 
+		/*
+		 * This takes the formatted JSON post (find) and uses the mysql package to parse this
+		 * into something the database can read. The "?" is replaced with the POST object.
+		 */
 		connection.query("INSERT INTO tbl_all_finds SET ?", find, function (err, rows) {
 			
 			connection.release();
@@ -148,8 +124,5 @@ apiRouter.post('/finds', function (req, res) {
 	});
 
 });
-
-//UPDATE existing record
-//apiRouter.route('/finds/id/:find_id');
 
 module.exports = apiRouter;
