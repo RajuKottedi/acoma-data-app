@@ -1,68 +1,112 @@
 angular.module('app')
 
-	.controller('dashboard.controller', ['$scope', '$state', function ($scope, $state) {
+	.controller('dashboard.controller', ['$scope', '$state', '$http', '$timeout',
+		function ($scope, $state, $http, $timeout) {
 
-		$scope.heading = 'Cibola Ceramic Analysis App';
+			var fetchAll = function () {
+				
+				var finds = [];
 
-		$scope.previousFinds = [{
-			id: '20161231-10:30:23-35.0695-108.8484',
-			site: 'Zuni',
-			desc: 'information about this',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10:30:23.35.0695',
-			site: 'Zuni',
-			desc: 'information masdfa this',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10:30:23.35.0695',
-			site: 'Zuni',
-			desc: 'information about this okay',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10:30:23.35.0695',
-			site: 'Zuni',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10:30:23.35.0695',
-			site: 'Zuni',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10:30:23.35.0695',
-			site: 'Zuni',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10:30:23.35.0695',
-			site: 'Zuni',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10:30:23.35.0695',
-			site: 'Zuni',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10:30:23.35.0695',
-			site: 'Zuni',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10:30:23.35.0695',
-			site: 'Zuni',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}, {
-			id: '20161231.10:30:23.35.0695',
-			site: 'Zuni',
-			desc: 'information about this hi',
-			date: '11/11/2016'
-		}];
+				if (localStorage.length === 0) {
+					return [];
+				}
 
-		$scope.goToNewFind = function () {
-			$state.go('newFind');
-		};
+				for (var i=0;i<localStorage.length;i++) {
+					
+					try {
+						finds.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+					} catch (err) {
+						console.log(err);
+					}
 
-	}]);
+				}
+
+				return finds;
+
+			};
+
+			var setErrorTimer = function (idx) {
+				$timeout(function () {
+					$scope.alerts[idx] = {};
+				}, 5000);
+			};
+
+			var hasConnection = function () {
+				return navigator && navigator.onLine;
+			};
+
+			$scope.alerts = [];
+
+			if ($state.params.alert) {
+				$scope.alerts.push($state.params.alert);
+			}
+
+			$scope.heading = 'Cibola Ceramic Analysis';
+
+			$scope.query = { value: '' };
+
+			// $scope.updateParent = function (query) {
+			// 	$scope.query = query;
+			// };
+
+			$scope.goToNewFind = function () {
+				$state.go('newFind');
+			};
+
+			$scope.previousFinds = fetchAll();
+
+			$scope.sync = function () {
+
+				var successAlert = {
+					display: true,
+					statusText: 'This has been synced to the server.',
+					type: 'success'
+				};
+
+				$scope.alerts = [];
+
+				if (hasConnection()) {
+
+					$scope.previousFinds.forEach(function (find, idx) {
+
+						console.log(find.dateCollected);
+
+						$http({
+							url: '/api/finds',
+							method: 'POST',
+							data: find
+						}).then(function (res) {
+
+							$scope.alerts.push(successAlert);
+
+							localStorage.removeItem(find.dateCollected.toString());
+							$scope.previousFinds.splice(idx);
+
+							setErrorTimer($scope.alerts.length - 1);
+
+						}, function (err) {
+
+							alertTmpl = err && err.data || {};
+							alertTmpl.type = 'error';
+							alertTmpl.display = true;
+
+							$scope.alerts.push(alertTmpl);
+
+							setErrorTimer($scope.alerts.length - 1);
+
+						});
+					});
+
+
+				} else {
+
+					alertTmpl.statusText = 'Requires internet connection to sync.';
+					alertTmpl.type = 'error';
+					$scope.alerts.push(alertTmpl);
+
+					setErrorTimer();
+				}
+
+			};
+		}
+	]);

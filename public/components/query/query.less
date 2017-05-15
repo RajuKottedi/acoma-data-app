@@ -1,0 +1,58 @@
+@import '../../layout/variables.less';
+
+.query {
+
+	background: @submarine-dark;
+
+	input {
+		background: @submarine;
+		outline: none;
+		padding: 0;
+		appearance: none;
+		-webkit-appearance: none;
+		border: none;
+		font-size: 100%;
+		color: #fff;
+		width: 0;
+		opacity: 0;
+		transition: opacity 1s, width .5s;
+		-webkit-transition: opacity 1s, width .5s;
+		height: 50px;
+	}
+
+	::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		color: @submarine-light;
+	}
+
+	::-moz-placeholder { /* Firefox 19+ */
+		color: @submarine-light;
+	}
+
+	:-ms-input-placeholder { /* IE 10+ */
+		color: @submarine-light;
+	}
+	
+	:-moz-placeholder { /* Firefox 18- */
+		color: @submarine-light;
+	}
+
+	> span {
+		padding: 0 24px;
+	}
+
+	input.displayInput {
+		opacity: 1;
+		width: 200px;
+		background: @submarine-dark;
+		padding: 6px 18px;
+	}
+
+	> span.displayInput {
+		background: @submarine-dark;
+	}
+
+	// span.fa-times {
+	// 	background: @submarine-dark;
+	// }
+
+}

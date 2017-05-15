@@ -1,2 +1,21 @@
-<header data-ui-view="header">{{ heading }}</header>
+<header data-ui-view="header">
+<!-- If client requests logo - go here -->
+	<!-- <img class="icon" src="resources/images/cibola-white.png" alt="cibola logo"> -->
+	<h1>{{ heading }}</h1>
+	<!-- <span class="header-query" data-query="query" data-update-parent="updateParent()"></span> -->
+	<button data-ng-disabled="!previousFinds.length" type="button" class="btn-sync" data-ng-click="sync()">
+		<!-- <span class="fa fa-refresh fa-lg"></span> -->
+		Save to database
+	</button>
+</header>
+
+<section
+	data-ng-repeat="alert in alerts | orderBy:'statusText' track by $index"
+	data-ng-if="(alerts.length > 1 && alert.statusText !== alerts[$index-1].statusText && alert.display) || (alerts.length === 1 && alert.display)"
+	class="alert-banner"
+	data-ng-class="{'success': alert.type === 'success', 'error': alert.type === 'error' }"
+	data-ng-if="alert.statusText">
+	<span>{{ alert.statusText }}</span><span data-ng-click="alert.display=false" class="fa fa-close"></span></span>
+</section>
+
 <article data-ui-view="main"></article>

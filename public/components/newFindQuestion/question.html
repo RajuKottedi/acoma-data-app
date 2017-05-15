@@ -10,47 +10,68 @@
 			data-ng-if="question.inputType === 'text' || !question.inputType"
 			type="text"
 			data-ng-disabled="question.disabled"
-			data-model="formData[question.id]"
+			data-ng-required="question.required"
+			data-ng-model="formData[question.id]"
 			data-ng-attr-id="{{ question.id }}"
 			data-ng-attr-placeholder="{{ question.placeholder }}">
-
+		
 		<!-- II. type is select -->
 		<select
 			data-ng-if="question.inputType === 'select'"
 			data-ng-disabled="question.disabled"
 			data-ng-attr-id="{{ question.id }}"
 			data-ng-model="formData[question.id]"
+			data-ng-required="question.required"
 			data-ng-options="question.label for question in question.options">
-				<option value="" selected="selected">Choose option</option>
+				<option value="" selected="true">-- Choose option --</option>
+			
 			</select>
 
 		<!-- III. type is textarea -->
-		<textarea data-ng-model="formData[question.id]" data-ng-if="question.inputType === 'textarea'" data-ng-disabled="question.disabled" data-ng-attr-placeholder="{{ question.placeholder }}"></textarea>
+		<textarea
+			data-ng-model="formData[question.id]"
+			data-ng-if="question.inputType === 'textarea'"
+			data-ng-disabled="question.disabled"
+			data-ng-required="question.required"
+			data-ng-attr-placeholder="{{ question.placeholder }}"></textarea>
 		
+		<!-- IV. type is number -->
 		<div data-ng-if="question.inputType === 'number'">
 			<input
 			type="number"
 			data-ng-disabled="question.disabled"
+			data-ng-required="question.required"
 			data-ng-model="formData[question.id]"
 			data-ng-attr-id="{{ question.id }}"
 			data-ng-attr-placeholder="{{ question.placeholder }}"> <span class="unit" data-ng-if="question.unit">{{ question.unit }}</span>
 		</div>
 
-		<!-- IV. type is avgNumber - a variable number of measurements -->
+		<!-- V. type is avgNumber - a variable number of measurements -->
 		<div data-ng-if="question.inputType === 'avgNumber'" class="row avg-number">
 			
 			<div class="col-1">
 				<input type="number" placeholder="0.0" data-ng-model="val1">
 			</div>
+
 			<div class="col-1">
 				<input type="number" placeholder="0.0" data-ng-model="val2">
 			</div>
+
 			<div class="col-1">
 				<input type="number" placeholder="0.0" data-ng-model="val3">
 			</div>
+
 			<div class="col-1">
-				<input data-ng-value="formatAverage(val1, val2, val3)" type="number" placeholder="0.0" disabled="disabled" data-ng-model="formData[question.id]"> <span class="unit" data-ng-if="question.unit">{{ question.unit }}</span>
+			<!-- data-ng-value="formatAverage(val1, val2, val3)" -->
+
+				<input
+					type="number"
+					placeholder="0.0"
+					disabled="disabled"
+					data-ng-model="formData[question.id]"> <span class="unit" data-ng-if="question.unit">{{ question.unit }}</span>
 			</div>
+			{{ formData[question.id] }}
+
 		</div>
 
 		<p data-ng-show="displayInfo">{{ question.description }}</p>

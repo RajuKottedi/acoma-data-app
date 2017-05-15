@@ -8,23 +8,37 @@ html { box-sizing: border-box; }
 	display: flex;
 	.col-1 { flex: 1; }
 	.col-2 { flex: 2; }
+
+	@media screen and (max-width: 647px) {
+		display: block;
+		.col-1, .col-2 {
+			display: block;
+			width: 100%;
+			margin-bottom: @defaultMargin * .5;
+		}
+	}
 }
 
 body {
 	font-family: 'Open Sans', sans-serif;
 	color: #4A4949;
+	background: #eee;
 }
 
-h1 {
+h2 {
 	font-size: 24px;
 	margin-bottom: @defaultMargin;
 	padding-bottom: 12px;
 	border-bottom: solid 2px rgba(0,0,0,.1);
 }
 
-h2 {
-  font-size: 18px;
-  font-weight: bold;
+h3 {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+h4 {
+	color: @submarine;
 }
 
 //Inputs
@@ -52,6 +66,19 @@ button {
 	font-size: 1em;
 }
 
+button.btn-link {
+	background: transparent;
+	padding: 0;
+	display: inline;
+	color: @linkBlue;
+	&:hover, &:active {
+		color: darken(@linkBlue, 10%);
+		text-decoration: underline;
+		cursor: pointer;
+		background: transparent;
+	}
+}
+
 button.primary {
 	background-color: @submarine;
 	color: #fff;
@@ -76,6 +103,22 @@ button.navigation {
 	letter-spacing: .1em;
 }
 
+a {
+	color: @linkBlue;
+}
+
+a:hover, a:active {
+	text-decoration: underline;
+	color: darken(@linkBlue, 10%);
+	cursor: pointer;
+}
+
+.icon {
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+}
+
 /* Utility Classes */
 .hundy { width: 100%; }
 .pull-right { float: right; }
@@ -88,17 +131,89 @@ button.navigation {
 .margin-bottom { margin-bottom: @defaultMargin; }
 .margin-top-2x { margin-top: @defaultMargin * 2; }
 
+strong {
+	font-weight: bold;
+}
+
 header {
-	width: 100%;
-	height: 50px;
+	// height: 72px;
 	color: #fff;
-	text-align: center;
 	line-height: 50px;
 	text-transform: uppercase;
 	letter-spacing: .1em;
 	box-shadow: 0 0 2px 0 rgba(0,0,0,.1);
 	border-bottom: solid 1px rgba(0,0,0,.05);
 	background: @submarine;
+	padding: 6px 12px;
+	
+	h1 {
+		display: inline-block;
+	}
+
+	button.btn-sync {
+		position: absolute;
+		right: 12px;
+		height: 50px;
+		background: @submarine-dark;
+		color: @submarine-white;
+	}
+
+	.header-query {
+		position: absolute;
+		right: 0;
+	}
+
+	.icon {
+		vertical-align: middle;
+		position: relative;
+		bottom: 2px;
+		margin-right: 6px;
+	}
+}
+
+section.alert-banner {
+	padding: 12px;
+	background: @niceGray;
+	color: #eee;
+	position: relative;
+
+	> span {
+		font-size: 87.5%;
+	}
+
+	.fa-close {
+		position: absolute;
+	  right: 12px;
+	  top: 6px;
+	  padding: 6px 8px;
+	  border-radius: 16px;
+	}
+};
+
+.alert-banner.error {
+	background: @failure-red;
+	border-bottom: 1px solid darken(@failure-red, 10%);
+	
+	.fa-close {
+		background: darken(@failure-red, 10%);
+		
+		&:hover {
+	  	background: darken(@failure-red, 20%);
+	  }
+	}
+}
+
+.alert-banner.success {
+	background: @success-green;
+	border-bottom: 1px solid darken(@success-green, 10%);
+
+	.fa-close {
+		background: darken(@success-green, 10%);
+
+		&:hover {
+			background: darken(@success-green, 15%);
+		}
+	}
 }
 
 header.child {
@@ -113,7 +228,19 @@ header.child {
 	}
 }
 
-article { background: #eee; }
+// article {
+// 	background: #eee;
+// 	// height: 100vh;
+// }
 
 /*Default section*/
 article > section { padding: 24px; }
+
+/* Icons */
+.fa-check-circle {
+	color: @success-green;
+}
+
+.fa-exclamation-triangle {
+	color: @failure-red;
+}

@@ -15,20 +15,20 @@
 		.col-1 { margin-right: @defaultMargin * 2; }
 	}
 
-	h2 {
+	h3 {
 		padding: @defaultMargin 0;
 		color: @submarine;
 
 		i { margin-right: @defaultMargin; }
 	}
 
-	h2:hover {
+	h3:hover {
 		color: @submarine-dark;
 		cursor: pointer;
 	}
 
 	.open {
-		h2 {
+		h3 {
 			padding-bottom: @defaultMargin * 2;
 			border-bottom: solid 1px rgba(0,0,0,.1);
 		}
@@ -53,6 +53,10 @@
 
 		input[type="number"] {
 			width: 25%;
+
+			@media screen and (max-width: 627px) {
+				width: 50%;
+			}
 		}
 
 		textarea {
@@ -79,6 +83,10 @@
 		.avg-number {
 			input[type='number'] {
 				width: 100%;
+			}
+
+			.col-1 {
+				margin-right: 6px;
 			}
 		}
 	}

@@ -1,0 +1,35 @@
+<section class="new-find">
+	
+	<h2>Enter a new find</h2>
+
+	<form data-ng-submit="submit()" novalidate name="form.newFindForm">
+		
+		<div class="set" data-ng-repeat="set in questions" data-ng-class="{'open': set.expandedDisplay}">
+
+			<h3 data-ng-click="set.expandedDisplay =! set.expandedDisplay">
+
+				<i data-ng-if="!set.expandedDisplay" class="fa fa-plus" aria-hidden="true"></i>
+				<i data-ng-if="set.expandedDisplay" class="fa fa-minus" aria-hidden="true"></i>
+				{{ set.sectionTitle }}</h3>
+
+			<div data-ng-if="set.expandedDisplay"
+				data-ng-repeat="question in set.questions"
+				data-new-find-question="question"
+				data-form-data="formData"></div>
+
+		</div>
+
+		<div class="form-actions">
+			<button type="button" data-ng-click="cancel()">Cancel</button>
+			<button class="primary pull-right" type="submit">
+				<span data-ng-if="!transmitting">Save to device</span>
+				<span data-ng-if="transmitting">Saving...</span>
+			</button>
+			<p class="margin-top-2x" data-ng-if="saveAlert.display">
+				<i class="fa" data-ng-class="{'fa-check-circle': saveAlert.type === 'success', 'fa-exclamation-triangle': saveAlert.type === 'error' }" aria-hidden="true"></i> {{ saveAlert.message }}
+			</p>
+		</div>
+
+	</form>
+
+</section>
