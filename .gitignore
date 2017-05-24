@@ -2,3 +2,5 @@ node_modules
 public/node_modules
 api/config/config.js
 api/config/config-local.js
+api/config/AZ_config.js
+api/config/config-test.js
