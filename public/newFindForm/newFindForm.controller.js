@@ -4,23 +4,7 @@ angular.module('app')
 
 		function ($scope, $state, $timeout, $http) {
 
-			var count,
-
-			initialize = function () {
-
-				if (navigator.geolocation) {
-
-					navigator.geolocation.getCurrentPosition(function (position) {
-
-						$scope.formData.location = {};
-						$scope.formData.location.lat = position && position.coords && position.coords.latitude;
-						$scope.formData.location.lng = position && position.coords && position.coords.longitude;
-
-					}, function (err) {
-						console.log(err);
-					});
-				}
-			};
+			var count;
 
 			var formatFormData = function (fd) {
 
@@ -28,7 +12,7 @@ angular.module('app')
 
 				for (var prop in fd) {
 					if (fd.hasOwnProperty(prop)) {
-						obj[prop] = fd[prop].value || fd[prop];
+						obj[prop] = fd[prop] && fd[prop].value !== "undefined" ? fd[prop].value : fd[prop];
 					}
 				}
 
@@ -105,7 +89,5 @@ angular.module('app')
 				$scope.formData = {};
 				$state.go('dashboard');
 			};
-
-			//initialize();
 		}
 	]);
