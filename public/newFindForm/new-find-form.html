@@ -2,7 +2,7 @@
 	
 	<h2>Enter a new find</h2>
 
-	<form data-ng-submit="submit()" novalidate name="form.newFindForm">
+	<form novalidate name="form.newFindForm">
 		
 		<div class="set" data-ng-repeat="set in questions" data-ng-class="{'open': set.expandedDisplay}">
 
@@ -21,7 +21,7 @@
 
 		<div class="form-actions">
 			<button type="button" data-ng-click="cancel()">Cancel</button>
-			<button class="primary pull-right" type="submit">
+			<button class="primary pull-right" type="button" data-ng-click="submit()">
 				<span data-ng-if="!transmitting">Save to device</span>
 				<span data-ng-if="transmitting">Saving...</span>
 			</button>
