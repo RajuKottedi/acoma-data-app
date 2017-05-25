@@ -12,7 +12,7 @@ angular.module('app')
 
 				for (var prop in fd) {
 					if (fd.hasOwnProperty(prop)) {
-						obj[prop] = fd[prop] && fd[prop].value !== "undefined" ? fd[prop].value : fd[prop];
+						obj[prop] = (fd[prop] && typeof fd[prop].value !== "undefined") ? fd[prop].value : fd[prop];
 					}
 				}
 
