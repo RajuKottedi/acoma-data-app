@@ -82,7 +82,9 @@ apiRouter.post('/finds', function (req, res) {
 		"Rim Form": req.body.rimForm,
 		"Coil Direc": req.body.dirCoils,
 		"Notes": req.body.other,
-		"dateCollected": req.body.dateCollected
+		"dateCollected": req.body.dateCollected,
+		"Portion": req.body.vesselPortion,
+		"Rim Rad": req.body.rimRadius
 	};
 
 	/* 

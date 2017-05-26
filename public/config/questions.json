@@ -9,7 +9,8 @@
 		"required": true,
 		"disabled": false,
 		"value": "Example Site Name",
-		"placeholder": "Site name"
+		"placeholder": "Site name",
+		"maxlength": 50
 	}]
 }, {
 	"sectionTitle": "Variables measured on all body sherds",
