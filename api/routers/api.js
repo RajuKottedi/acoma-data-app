@@ -76,6 +76,7 @@ apiRouter.post('/finds', function (req, res) {
 		"Depth AVG": req.body.depthIdnAvg,
 		"Coils AVG": req.body.coilWidthAvg,
 		"IndPer Ct": req.body.indPerCt,
+		"IndPer Calc": req.body.indPerCt ? req.body.indPerCt / 9 : null,
 		"Oblit P": req.body.propOblCoils,
 		"Dist to coils": req.body.distCoils,
 		"Rim Form": req.body.rimForm,
