@@ -9,13 +9,10 @@
 		<input
 			data-ng-if="question.inputType === 'text' || !question.inputType"
 			type="text"
-			data-ng-attr-name="{{ question.id }}"
 			data-ng-disabled="question.disabled"
-			data-ng-attr-required="{{ question.required }}"
+			data-ng-required="question.required"
 			data-ng-model="formData[question.id]"
 			data-ng-attr-id="{{ question.id }}"
-			data-ng-minlength="{{ question.minlength }}"
-			data-ng-maxlength="{{ question.maxlength }}"
 			data-ng-attr-placeholder="{{ question.placeholder }}">
 		
 		<!-- II. type is select -->
@@ -23,11 +20,8 @@
 			data-ng-if="question.inputType === 'select'"
 			data-ng-disabled="question.disabled"
 			data-ng-attr-id="{{ question.id }}"
-			data-ng-attr-name="{{ question.id }}"
 			data-ng-model="formData[question.id]"
-			data-ng-attr-required="{{ question.required }}"
-			data-ng-minlength="{{ question.minlength }}"
-			data-ng-maxlength="{{ question.maxlength }}"
+			data-ng-required="question.required"
 			data-ng-options="question.label for question in question.options">
 				<option value="" selected="true">-- Choose option --</option>
 			
@@ -38,10 +32,7 @@
 			data-ng-model="formData[question.id]"
 			data-ng-if="question.inputType === 'textarea'"
 			data-ng-disabled="question.disabled"
-			data-ng-attr-required="{{ question.required }}"
-			data-ng-attr-name="{{ question.id }}"
-			data-ng-minlength="{{ question.minlength }}"
-			data-ng-maxlength="{{ question.maxlength }}"
+			data-ng-required="question.required"
 			data-ng-attr-placeholder="{{ question.placeholder }}"></textarea>
 		
 		<!-- IV. type is number -->
@@ -49,12 +40,9 @@
 			<input
 			type="number"
 			data-ng-disabled="question.disabled"
-			data-ng-attr-required="{{ question.required }}"
+			data-ng-required="question.required"
 			data-ng-model="formData[question.id]"
 			data-ng-attr-id="{{ question.id }}"
-			data-ng-attr-name="{{ question.id }}"
-			data-ng-minlength="{{ question.minlength }}"
-			data-ng-maxlength="{{ question.maxlength }}"
 			data-ng-attr-placeholder="{{ question.placeholder }}"> <span class="unit" data-ng-if="question.unit">{{ question.unit }}</span>
 		</div>
 
@@ -62,31 +50,28 @@
 		<div data-ng-if="question.inputType === 'avgNumber'" class="row avg-number">
 			
 			<div class="col-1">
-				<input data-ng-attr-required="{{ question.required }}" type="number" placeholder="0.0" data-ng-model="val1" data-ng-attr-name="{{ question.id }}">
+				<input type="number" placeholder="0.0" data-ng-model="val1">
 			</div>
 
 			<div class="col-1">
-				<input data-ng-attr-required="{{ question.required }}" type="number" placeholder="0.0" data-ng-model="val2" data-ng-attr-name="{{ question.id }}">
+				<input type="number" placeholder="0.0" data-ng-model="val2">
 			</div>
 
 			<div class="col-1">
-				<input data-ng-attr-required="{{ question.required }}" type="number" placeholder="0.0" data-ng-model="val3" data-ng-attr-name="{{ question.id }}">
+				<input type="number" placeholder="0.0" data-ng-model="val3">
 			</div>
 
 			<div class="col-1">
+			<!-- data-ng-value="formatAverage(val1, val2, val3)" -->
 
 				<input
 					type="number"
 					placeholder="0.0"
 					disabled="disabled"
-					data-ng-attr-required="{{ question.required }}" 
-					data-ng-attr-name="{{ question.id }}"
 					data-ng-model="formData[question.id]"> <span class="unit" data-ng-if="question.unit">{{ question.unit }}</span>
 			</div>
 
 		</div>
-
-		<div data-validator="error"></div>
 
 		<p data-ng-show="displayInfo">{{ question.description }}</p>
 
