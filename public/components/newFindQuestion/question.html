@@ -9,6 +9,7 @@
 		<input
 			data-ng-if="question.inputType === 'text' || !question.inputType"
 			type="text"
+			data-ng-attr-maxlength="{{ question.maxlength }}"
 			data-ng-disabled="question.disabled"
 			data-ng-required="question.required"
 			data-ng-model="formData[question.id]"
