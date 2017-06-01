@@ -21,7 +21,7 @@
 
 		<div class="form-actions">
 			<button type="button" data-ng-click="cancel()">Cancel</button>
-			<button class="primary pull-right" type="button" data-ng-click="submit(form.newFindForm.$valid)">
+			<button data-ng-disabled="form.newFindForm.$invalid" class="primary pull-right" type="button" data-ng-click="submit()">
 				<span data-ng-if="!transmitting">Save to device</span>
 				<span data-ng-if="transmitting">Saving...</span>
 			</button>

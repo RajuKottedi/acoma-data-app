@@ -509,6 +509,10 @@ section.dashboard {
 .new-find .set .avg-number .col-1 {
   margin-right: 6px;
 }
+.new-find .ng-invalid.ng-touched {
+  outline-color: red;
+  border: solid 2px red;
+}
 .new-find .form-actions {
   margin-top: 24px;
 }
