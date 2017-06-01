@@ -78,7 +78,7 @@ apiRouter.post('/finds', function (req, res) {
 		"IndWidth 2": req.body.widthInd2,
 		"IndWidth 3": req.body.widthInd3,
 
-		"Depth AVG": req.body.depthIdnAvg,
+		"Depth AVG": req.body.depthIndAvg,
 		"Depth 1": req.body.depthInd1,
 		"Depth 2": req.body.depthInd2,
 		"Depth 3": req.body.depthInd3,
