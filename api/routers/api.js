@@ -74,14 +74,14 @@ apiRouter.post('/finds', function (req, res) {
 		"Thick": req.body.thickness,
 
 		"IndWidth AVG": req.body.widthIdnAvg,
-		"IndWidth 1": req.body.widthIdn1,
-		"IndWidth 2": req.body.widthIdn2,
-		"IndWidth 3": req.body.widthIdn3,
+		"IndWidth 1": req.body.widthInd1,
+		"IndWidth 2": req.body.widthInd2,
+		"IndWidth 3": req.body.widthInd3,
 
 		"Depth AVG": req.body.depthIdnAvg,
-		"Depth 1": req.body.depthIdn1,
-		"Depth 2": req.body.depthIdn2,
-		"Depth 3": req.body.depthIdn3,
+		"Depth 1": req.body.depthInd1,
+		"Depth 2": req.body.depthInd2,
+		"Depth 3": req.body.depthInd3,
 
 		"Coils AVG": req.body.coilWidthAvg,
 		"Coils 1": req.body.coilWidth1,
