@@ -72,9 +72,22 @@ apiRouter.post('/finds', function (req, res) {
 		"Int Surf": req.body.intSurf,
 		"Soot": req.body.sooting,
 		"Thick": req.body.thickness,
+
 		"IndWidth AVG": req.body.widthIdnAvg,
+		"IndWidth 1": req.body.widthIdn1,
+		"IndWidth 2": req.body.widthIdn2,
+		"IndWidth 3": req.body.widthIdn3,
+
 		"Depth AVG": req.body.depthIdnAvg,
+		"Depth 1": req.body.depthIdn1,
+		"Depth 2": req.body.depthIdn2,
+		"Depth 3": req.body.depthIdn3,
+
 		"Coils AVG": req.body.coilWidthAvg,
+		"Coils 1": req.body.coilWidth1,
+		"Coils 2": req.body.coilWidth2,
+		"Coils 3": req.body.coilWidth3,
+
 		"IndPer Ct": req.body.indPerCt,
 		"IndPer Calc": req.body.indPerCt ? req.body.indPerCt / 9 : null,
 		"Oblit P": req.body.propOblCoils,

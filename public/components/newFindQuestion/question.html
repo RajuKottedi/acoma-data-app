@@ -50,15 +50,15 @@
 		<div data-ng-if="question.inputType === 'avgNumber'" class="row avg-number">
 			
 			<div class="col-1">
-				<input type="number" placeholder="0.0" data-ng-model="val1">
+				<input type="number" placeholder="0.0" data-ng-model="val1" data-ng-change="updateAvg(question.id, val1, val2, val3)">
 			</div>
 
 			<div class="col-1">
-				<input type="number" placeholder="0.0" data-ng-model="val2">
+				<input type="number" placeholder="0.0" data-ng-model="val2" data-ng-change="updateAvg(question.id, val1, val2, val3)">
 			</div>
 
 			<div class="col-1">
-				<input type="number" placeholder="0.0" data-ng-model="val3">
+				<input type="number" placeholder="0.0" data-ng-model="val3" data-ng-change="updateAvg(question.id, val1, val2, val3)">
 			</div>
 
 			<div class="col-1">
@@ -67,9 +67,11 @@
 					type="number"
 					placeholder="0.0"
 					disabled="disabled"
-					data-ng-value="formatAverage(val1, val2, val3)"
+					data-ng-attr-id="{{ question.id }}"
 					data-ng-model="formData[question.id]"> <span class="unit" data-ng-if="question.unit">{{ question.unit }}</span>
+
 			</div>
+
 
 		</div>
 
