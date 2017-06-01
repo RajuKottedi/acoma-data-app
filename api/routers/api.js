@@ -73,7 +73,7 @@ apiRouter.post('/finds', function (req, res) {
 		"Soot": req.body.sooting,
 		"Thick": req.body.thickness,
 
-		"IndWidth AVG": req.body.widthInAvg,
+		"IndWidth AVG": req.body.widthIndAvg,
 		"IndWidth 1": req.body.widthInd1,
 		"IndWidth 2": req.body.widthInd2,
 		"IndWidth 3": req.body.widthInd3,
