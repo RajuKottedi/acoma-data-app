@@ -342,6 +342,7 @@
 		"inputType": "textarea",
 		"required": false,
 		"disabled": false,
+		"maxlength": 500,
 		"value": "",
 		"placeholder": "If you chose \"other\" for any question, please specify here."
 	}]

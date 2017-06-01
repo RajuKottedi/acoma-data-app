@@ -29,6 +29,7 @@
 
 		<!-- III. type is textarea -->
 		<textarea
+			data-ng-attr-maxlength="{{ question.maxlength }}"
 			data-ng-model="formData[question.id]"
 			data-ng-if="question.inputType === 'textarea'"
 			data-ng-disabled="question.disabled"
