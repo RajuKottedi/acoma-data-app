@@ -1,5 +1,7 @@
-# zuni-data-app
-A data collection application
+# acoma-data-app
+A data collection application to be used in the Southwest, USA
+
+A comprehensive tutorial of how to deploy the application can be found [here](https://medium.com/@kauffmanes/deploying-a-node-app-to-digitalocean-87533c107cb3 "Medium article on deploying a node app").
 
 1. clone repository
 2. cd into public folder
